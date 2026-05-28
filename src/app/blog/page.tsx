@@ -1,36 +1,22 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
-import {
-  BlogCategory,
-  formatBlogDate,
-  getBlogPosts,
-} from "@/lib/microcms";
+import { formatBlogDate, getBlogPosts } from "@/lib/microcms";
 import { site } from "@/lib/site";
 
 export const metadata = {
   title: `ブログ | ${site.name}`,
 };
 
-const allCategories: BlogCategory[] = [
-  "お知らせ",
-  "現場レポート",
-  "社内イベント",
-  "技術ノート",
-];
-
 export default async function BlogPage() {
   const posts = await getBlogPosts();
 
-  const counts: Record<BlogCategory, number> = {
-    "お知らせ": 0,
-    "現場レポート": 0,
-    "社内イベント": 0,
-    "技術ノート": 0,
-  };
+  const counts = new Map<string, number>();
   for (const p of posts) {
-    if (p.category in counts) counts[p.category]++;
+    const name = p.category?.name;
+    if (name) counts.set(name, (counts.get(name) ?? 0) + 1);
   }
+  const categoryList = [...counts.entries()];
 
   return (
     <>
@@ -48,7 +34,7 @@ export default async function BlogPage() {
               <span className="px-5 py-2 text-sm font-bold border bg-brand-600 text-white border-brand-600">
                 すべて
               </span>
-              {allCategories.map((c) => (
+              {categoryList.map(([c]) => (
                 <span
                   key={c}
                   className="px-5 py-2 text-sm font-bold border border-[color:var(--border)] text-foreground/70"
@@ -83,7 +69,7 @@ export default async function BlogPage() {
                         variant={
                           i % 3 === 0 ? "blue" : i % 3 === 1 ? "orange" : "dark"
                         }
-                        label={p.category}
+                        label={p.category?.name ?? "BLOG"}
                       />
                     )}
                     <div className="p-6">
@@ -91,9 +77,11 @@ export default async function BlogPage() {
                         <time className="text-foreground/60 font-mono">
                           {formatBlogDate(p.publishedAt)}
                         </time>
-                        <span className="text-brand-600 font-bold">
-                          {p.category}
-                        </span>
+                        {p.category?.name && (
+                          <span className="text-brand-600 font-bold">
+                            {p.category.name}
+                          </span>
+                        )}
                       </div>
                       <h3 className="font-bold leading-snug mb-3 group-hover:text-brand-600 transition-colors">
                         {p.title}
@@ -116,17 +104,23 @@ export default async function BlogPage() {
                 CATEGORIES
               </h3>
               <ul className="space-y-2">
-                {allCategories.map((c) => (
-                  <li
-                    key={c}
-                    className="text-sm flex items-center justify-between py-2 border-b border-[color:var(--border)]"
-                  >
-                    <span>{c}</span>
-                    <span className="text-xs text-foreground/50">
-                      ({counts[c]})
-                    </span>
+                {categoryList.length === 0 ? (
+                  <li className="text-xs text-foreground/50 py-2">
+                    （カテゴリはまだありません）
                   </li>
-                ))}
+                ) : (
+                  categoryList.map(([c, count]) => (
+                    <li
+                      key={c}
+                      className="text-sm flex items-center justify-between py-2 border-b border-[color:var(--border)]"
+                    >
+                      <span>{c}</span>
+                      <span className="text-xs text-foreground/50">
+                        ({count})
+                      </span>
+                    </li>
+                  ))
+                )}
               </ul>
             </div>
           </aside>

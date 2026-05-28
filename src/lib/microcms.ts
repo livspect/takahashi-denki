@@ -1,15 +1,18 @@
 import { createClient, MicroCMSListResponse } from "microcms-js-sdk";
 
-export type BlogCategory =
-  | "お知らせ"
-  | "現場レポート"
-  | "社内イベント"
-  | "技術ノート";
+export type BlogCategory = {
+  id: string;
+  name: string;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  revisedAt?: string;
+};
 
 export type BlogPost = {
   id: string;
   title: string;
-  category: BlogCategory;
+  category?: BlogCategory;
   thumbnail?: { url: string; width: number; height: number };
   excerpt?: string;
   body: string;

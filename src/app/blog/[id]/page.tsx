@@ -75,7 +75,11 @@ export default async function BlogPostPage({ params }: Props) {
             <time className="text-foreground/60 font-mono">
               {formatBlogDate(post.publishedAt)}
             </time>
-            <span className="text-brand-600 font-bold">{post.category}</span>
+            {post.category?.name && (
+              <span className="text-brand-600 font-bold">
+                {post.category.name}
+              </span>
+            )}
           </div>
 
           {post.thumbnail && (

@@ -173,7 +173,7 @@ async function BlogPreview() {
                   ) : (
                     <PlaceholderImage
                       variant={i === 1 ? "orange" : "blue"}
-                      label={p.category}
+                      label={p.category?.name ?? "BLOG"}
                     />
                   )}
                   <div className="p-7 lg:p-8">
@@ -181,9 +181,11 @@ async function BlogPreview() {
                       <time className="text-foreground/60 font-mono">
                         {formatBlogDate(p.publishedAt)}
                       </time>
-                      <span className="text-brand-600 font-bold tracking-wider">
-                        {p.category}
-                      </span>
+                      {p.category?.name && (
+                        <span className="text-brand-600 font-bold tracking-wider">
+                          {p.category.name}
+                        </span>
+                      )}
                     </div>
                     <h3 className="font-bold leading-relaxed tracking-wide mb-3 group-hover:text-brand-600 transition-colors">
                       {p.title}

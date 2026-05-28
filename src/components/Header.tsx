@@ -37,10 +37,9 @@ export function Header() {
           ))}
           <Link
             href="/contact"
-            className="ml-3 inline-flex items-center gap-2 bg-brand-600 text-white px-5 py-2.5 text-sm font-bold rounded-sm hover:bg-brand-700 transition-colors"
+            className="ml-3 inline-flex items-center bg-brand-600 text-white px-6 py-2.5 text-sm font-bold tracking-wider hover:bg-brand-700 transition-colors"
           >
             お問い合わせ
-            <span aria-hidden>→</span>
           </Link>
         </nav>
 

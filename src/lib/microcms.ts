@@ -30,7 +30,7 @@ const client =
 export async function getBlogPosts(limit = 100): Promise<BlogPost[]> {
   if (!client) return [];
   const res = await client.get<MicroCMSListResponse<BlogPost>>({
-    endpoint: "blog",
+    endpoint: "blogs",
     queries: { limit, orders: "-publishedAt" },
   });
   return res.contents;
@@ -40,7 +40,7 @@ export async function getBlogPost(id: string): Promise<BlogPost | null> {
   if (!client) return null;
   try {
     return await client.get<BlogPost>({
-      endpoint: "blog",
+      endpoint: "blogs",
       contentId: id,
     });
   } catch {

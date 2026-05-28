@@ -163,3 +163,62 @@ h3 {
   opacity: 1;
   transform: none;
 }
+
+/* Blog post body (microCMS rich editor HTML) */
+.prose-blog h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+.prose-blog h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-blog p {
+  margin: 1.25rem 0;
+}
+.prose-blog a {
+  color: var(--brand-600);
+  text-decoration: underline;
+}
+.prose-blog ul,
+.prose-blog ol {
+  padding-left: 1.5rem;
+  margin: 1.25rem 0;
+}
+.prose-blog ul { list-style: disc; }
+.prose-blog ol { list-style: decimal; }
+.prose-blog li { margin: 0.4rem 0; }
+.prose-blog img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
+.prose-blog blockquote {
+  border-left: 3px solid var(--brand-500);
+  padding-left: 1rem;
+  color: rgb(80 80 80 / 0.9);
+  margin: 1.5rem 0;
+}
+.prose-blog code {
+  background: #f4f6f8;
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  font-size: 0.9em;
+}
+.prose-blog pre {
+  background: #1f2937;
+  color: #f3f4f6;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.prose-blog pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}

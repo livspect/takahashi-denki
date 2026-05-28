@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { Reveal } from "@/components/Reveal";
+import { formatBlogDate, getBlogPosts } from "@/lib/microcms";
 import { businessPillars, serviceAreas, site } from "@/lib/site";
 
 export default function HomePage() {
@@ -141,62 +142,63 @@ function BusinessIntro() {
   );
 }
 
-function BlogPreview() {
-  const posts = [
-    {
-      date: "2025.05.18",
-      cat: "現場レポート",
-      title: "店舗の業務用エアコン入替工事を行いました",
-      excerpt:
-        "大田区内の店舗で、業務用エアコンの入替工事を実施。夏本番前の早めのメンテナンスがおすすめです。",
-    },
-    {
-      date: "2025.05.10",
-      cat: "お知らせ",
-      title: "2026年度 スタッフ募集を開始しました",
-      excerpt:
-        "電気・空調・給排水の設備工事に興味のある方へ。経験者・未経験者ともに歓迎しています。",
-    },
-    {
-      date: "2025.04.27",
-      cat: "社内イベント",
-      title: "春の安全大会を開催しました",
-      excerpt:
-        "協力会社の皆様と合同で実施。今年度のKY活動方針と新工具の取り扱い研修を行いました。",
-    },
-  ];
+async function BlogPreview() {
+  const posts = (await getBlogPosts(3));
   return (
     <section className="py-28 lg:py-40 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="flex justify-center mb-16 lg:mb-20">
           <SectionLabel en="BLOG" jp="現場ブログ" align="center" />
         </Reveal>
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-          {posts.map((p, i) => (
-            <Reveal key={p.title} delay={i * 120}>
-              <article className="group bg-white border border-[color:var(--border)] hover:border-brand-500 transition-colors h-full">
-                <PlaceholderImage
-                  variant={i === 1 ? "orange" : "blue"}
-                  label={p.cat}
-                />
-                <div className="p-7 lg:p-8">
-                  <div className="flex items-center gap-3 text-xs mb-4">
-                    <time className="text-foreground/60 font-mono">{p.date}</time>
-                    <span className="text-brand-600 font-bold tracking-wider">
-                      {p.cat}
-                    </span>
+        {posts.length === 0 ? (
+          <Reveal className="max-w-2xl mx-auto text-center py-12 border border-dashed border-[color:var(--border)]">
+            <p className="text-sm text-foreground/60">
+              まだ記事がありません。microCMS から記事を公開すると、ここに表示されます。
+            </p>
+          </Reveal>
+        ) : (
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+            {posts.map((p, i) => (
+              <Reveal key={p.id} delay={i * 120}>
+                <Link
+                  href={`/blog/${p.id}`}
+                  className="group bg-white border border-[color:var(--border)] hover:border-brand-500 transition-colors h-full block"
+                >
+                  {p.thumbnail ? (
+                    <img
+                      src={p.thumbnail.url}
+                      alt={p.title}
+                      className="w-full aspect-video object-cover"
+                    />
+                  ) : (
+                    <PlaceholderImage
+                      variant={i === 1 ? "orange" : "blue"}
+                      label={p.category}
+                    />
+                  )}
+                  <div className="p-7 lg:p-8">
+                    <div className="flex items-center gap-3 text-xs mb-4">
+                      <time className="text-foreground/60 font-mono">
+                        {formatBlogDate(p.publishedAt)}
+                      </time>
+                      <span className="text-brand-600 font-bold tracking-wider">
+                        {p.category}
+                      </span>
+                    </div>
+                    <h3 className="font-bold leading-relaxed tracking-wide mb-3 group-hover:text-brand-600 transition-colors">
+                      {p.title}
+                    </h3>
+                    {p.excerpt && (
+                      <p className="text-sm text-foreground/70 leading-loose line-clamp-3">
+                        {p.excerpt}
+                      </p>
+                    )}
                   </div>
-                  <h3 className="font-bold leading-relaxed tracking-wide mb-3 group-hover:text-brand-600 transition-colors">
-                    {p.title}
-                  </h3>
-                  <p className="text-sm text-foreground/70 leading-loose">
-                    {p.excerpt}
-                  </p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        )}
         <Reveal className="flex justify-center mt-16">
           <Link
             href="/blog"

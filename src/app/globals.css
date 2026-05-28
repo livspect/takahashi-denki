@@ -2,25 +2,164 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #222222;
+  --brand-50: #eef8ff;
+  --brand-100: #d6edfd;
+  --brand-200: #b3ddfb;
+  --brand-300: #7cc6f7;
+  --brand-400: #4aaeee;
+  --brand-500: #2b97e5;
+  --brand-600: #1f86d4;
+  --brand-700: #1675b9;
+  --brand-800: #155f95;
+  --brand-900: #1f456b;
+  --brand-950: #2c344c;
+  --accent: #ff6400;
+  --muted: #f4f6f8;
+  --border: #e3e7ed;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border-soft: var(--border);
+  --font-sans: var(--font-zen-kaku), "Hiragino Sans", "Yu Gothic", system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-zen-kaku), "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-feature-settings: "palt";
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.06em;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-grid-dark {
+  background-image:
+    linear-gradient(rgba(22, 58, 120, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 58, 120, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.stripe-bg {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0,
+    transparent 18px,
+    rgba(255, 255, 255, 0.06) 18px,
+    rgba(255, 255, 255, 0.06) 36px
+  );
+}
+
+.section-label-en {
+  font-family: var(--font-display);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+@keyframes slow-pan {
+  0% {
+    transform: scale(1.05) translateX(0);
+  }
+  100% {
+    transform: scale(1.1) translateX(-2%);
+  }
+}
+
+.animate-slow-pan {
+  animation: slow-pan 14s ease-in-out infinite alternate;
+}
+
+/* Hero cover photo behind a brand-blue overlay */
+.cover-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(43, 151, 229, 0.78) 0%,
+    rgba(22, 117, 185, 0.82) 55%,
+    rgba(44, 52, 76, 0.9) 100%
+  );
+}
+
+/* Scroll indicator at the bottom of the hero */
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(22px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.scroll-dot {
+  animation: scroll-dot 1.8s ease-in-out infinite;
+}
+
+/* Scroll-triggered reveal (fade in + up) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }

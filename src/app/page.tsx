@@ -29,15 +29,15 @@ function Hero() {
         <div className="absolute -top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-brand-300/20 rounded-full blur-3xl" />
       </div>
       <div className="relative z-10 px-6 text-center max-w-4xl animate-fade-up">
-        <p className="section-label-en text-xs sm:text-sm tracking-[0.32em] text-white/85 mb-10">
+        <p className="section-label-en text-[10px] sm:text-sm tracking-[0.2em] sm:tracking-[0.32em] text-white/85 mb-8 sm:mb-10">
           ELECTRICAL &middot; AIR-CONDITIONING &middot; PLUMBING
         </p>
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[1.45] tracking-[0.1em] mb-10">
+        <h1 className="text-[2rem] sm:text-6xl lg:text-7xl font-black leading-[1.4] sm:leading-[1.45] tracking-[0.04em] sm:tracking-[0.08em] lg:tracking-[0.1em] mb-8 sm:mb-10 [word-break:keep-all] [overflow-wrap:break-word]">
           電気・空調・給排水で
           <br />
           暮らしと現場を支える
         </h1>
-        <p className="text-sm sm:text-base leading-loose text-white/90 max-w-2xl mx-auto mb-12">
+        <p className="text-sm sm:text-base leading-relaxed sm:leading-loose text-white/90 max-w-2xl mx-auto mb-10 sm:mb-12">
           住宅・店舗・施設の電気工事から、冷暖房・空調、給排水まで。
           東京都大田区を拠点に、現場の「困った」に分野を横断してお応えしてきました。
           人と品質を大事にする、地域の設備工事会社です。
@@ -97,7 +97,7 @@ function StatsBand() {
 
 function BusinessIntro() {
   return (
-    <section className="py-28 lg:py-40 bg-white">
+    <section className="py-16 sm:py-28 lg:py-40 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
           <div className="flex justify-center">
@@ -146,7 +146,7 @@ function BusinessIntro() {
 async function BlogPreview() {
   const posts = (await getBlogPosts(3));
   return (
-    <section className="py-28 lg:py-40 bg-muted">
+    <section className="py-16 sm:py-28 lg:py-40 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="flex justify-center mb-16 lg:mb-20">
           <SectionLabel en="BLOG" jp="現場ブログ" align="center" />
@@ -223,7 +223,7 @@ function WorksPreview() {
     { title: "住宅 コンセント増設・電気工事", area: "東京都目黒区", year: "2024", image: "/stock/electrical.jpg" },
   ];
   return (
-    <section className="py-28 lg:py-40 bg-white">
+    <section className="py-16 sm:py-28 lg:py-40 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="flex justify-center mb-16 lg:mb-20">
           <SectionLabel en="WORKS" jp={"施工事例"} align="center" />
@@ -288,7 +288,7 @@ function WorkplaceSection() {
     },
   ];
   return (
-    <section className="py-28 lg:py-40 bg-brand-950 text-white relative overflow-hidden">
+    <section className="py-16 sm:py-28 lg:py-40 bg-brand-950 text-white relative overflow-hidden">
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-brand-600/20 rounded-full blur-3xl" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
@@ -330,7 +330,7 @@ function WorkplaceSection() {
 
 function RecruitHighlight() {
   return (
-    <section className="py-24 lg:py-32 bg-white">
+    <section className="py-16 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           <div className="bg-brand-600 text-white p-10 lg:p-14 flex flex-col relative overflow-hidden">
@@ -385,7 +385,7 @@ function RecruitHighlight() {
 
 function AreaSection() {
   return (
-    <section className="py-28 lg:py-40 bg-muted">
+    <section className="py-16 sm:py-28 lg:py-40 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
           <div className="flex justify-center">
@@ -420,7 +420,7 @@ function AreaSection() {
 
 function ContactCTA() {
   return (
-    <section className="relative py-24 lg:py-32 bg-gradient-to-br from-brand-500 via-brand-700 to-brand-950 text-white overflow-hidden">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-brand-500 via-brand-700 to-brand-950 text-white overflow-hidden">
       <div className="absolute -top-32 right-0 w-[700px] h-[500px] bg-brand-400/20 rounded-full blur-3xl" />
       <Reveal className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="section-label-en text-xs text-white/80 tracking-[0.3em] mb-6">

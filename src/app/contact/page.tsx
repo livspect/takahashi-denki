@@ -16,7 +16,7 @@ export default function ContactPage() {
         breadcrumbs={[{ label: "お問い合わせ" }]}
       />
 
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20">
           <div>
             <SectionLabel en="CONTACT INFO" jp="連絡先" />

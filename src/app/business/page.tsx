@@ -17,7 +17,7 @@ export default function BusinessPage() {
         breadcrumbs={[{ label: "事業内容" }]}
       />
 
-      <section id="scope" className="py-24 lg:py-32 bg-white">
+      <section id="scope" className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 mb-16">
             <SectionLabel en="SCOPE" jp={"対応分野"} />
@@ -60,7 +60,7 @@ export default function BusinessPage() {
         </div>
       </section>
 
-      <section id="strength" className="py-24 lg:py-32 bg-brand-950 text-white relative overflow-hidden">
+      <section id="strength" className="py-16 sm:py-24 lg:py-32 bg-brand-950 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
@@ -101,7 +101,7 @@ export default function BusinessPage() {
         </div>
       </section>
 
-      <section id="flow" className="py-24 lg:py-32 bg-white">
+      <section id="flow" className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
             <SectionLabel en="FLOW" jp="ご相談から施工までの流れ" />
@@ -158,7 +158,7 @@ export default function BusinessPage() {
         </div>
       </section>
 
-      <section id="area" className="py-24 lg:py-32 bg-muted">
+      <section id="area" className="py-16 sm:py-24 lg:py-32 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <SectionLabel en="SERVICE AREA" jp="対応エリア" />

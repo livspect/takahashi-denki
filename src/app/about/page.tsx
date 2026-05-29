@@ -17,7 +17,7 @@ export default function AboutPage() {
         breadcrumbs={[{ label: "会社概要" }]}
       />
 
-      <section id="vision" className="py-24 lg:py-32 bg-white">
+      <section id="vision" className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20">
           <SectionLabel en="VISION" jp={"私たちの\nビジョン"} />
           <div className="space-y-6 text-base lg:text-lg leading-loose text-foreground/85">
@@ -35,7 +35,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="culture" className="py-24 lg:py-32 bg-muted">
+      <section id="culture" className="py-16 sm:py-24 lg:py-32 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
             <SectionLabel en="CULTURE" jp={"社風・雰囲気"} />
@@ -71,7 +71,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
             <SectionLabel en="COMPANY PROFILE" jp="会社情報" />
@@ -117,7 +117,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="csr" className="py-24 lg:py-32 bg-brand-950 text-white relative overflow-hidden">
+      <section id="csr" className="py-16 sm:py-24 lg:py-32 bg-brand-950 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">

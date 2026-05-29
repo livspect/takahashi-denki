@@ -27,7 +27,7 @@ export default async function BlogPage() {
         breadcrumbs={[{ label: "ブログ" }]}
       />
 
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
           <div>
             <div className="flex flex-wrap gap-2 mb-10">

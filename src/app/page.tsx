@@ -217,10 +217,10 @@ async function BlogPreview() {
 
 function WorksPreview() {
   const works = [
-    { title: "店舗 照明・配線設備工事", area: "東京都大田区", year: "2025", image: "/works/5379.png" },
-    { title: "業務用エアコン入替工事", area: "東京都品川区", year: "2025", image: "/works/5426.png" },
-    { title: "給湯・給水設備の改修工事", area: "東京都大田区", year: "2024", image: "/works/5427.png" },
-    { title: "住宅 コンセント増設・電気工事", area: "東京都目黒区", year: "2024", image: "/works/5378.png" },
+    { title: "店舗 照明・配線設備工事", area: "東京都大田区", year: "2025", image: "/stock/lighting.jpg" },
+    { title: "業務用エアコン入替工事", area: "東京都品川区", year: "2025", image: "/stock/ac.jpg" },
+    { title: "給湯・給水設備の改修工事", area: "東京都大田区", year: "2024", image: "/stock/plumbing.jpg" },
+    { title: "住宅 コンセント増設・電気工事", area: "東京都目黒区", year: "2024", image: "/stock/electrical.jpg" },
   ];
   return (
     <section className="py-28 lg:py-40 bg-white">
@@ -232,11 +232,13 @@ function WorksPreview() {
           {works.map((w, i) => (
             <Reveal key={w.title} delay={i * 100}>
               <article className="group">
-                <PlaceholderImage
-                  variant={i % 2 === 0 ? "blue" : "dark"}
-                  ratio="square"
-                  label={`WORKS ${String(i + 1).padStart(2, "0")}`}
-                />
+                <div className="overflow-hidden">
+                  <img
+                    src={w.image}
+                    alt={w.title}
+                    className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
                 <div className="pt-5">
                   <p className="text-xs text-brand-600 font-bold tracking-wider mb-2">
                     {w.area} ／ {w.year}

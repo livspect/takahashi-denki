@@ -30,12 +30,12 @@ export default function BusinessPage() {
             {businessPillars.map((p, i) => (
               <article
                 key={p.title}
-                className="bg-muted border-l-4 border-brand-600 overflow-hidden flex flex-col"
+                className="bg-white border border-[color:var(--border)] overflow-hidden flex flex-col"
               >
-                <PlaceholderImage
-                  variant={i === 1 ? "orange" : "blue"}
-                  ratio="video"
-                  label={p.en}
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full aspect-video object-cover"
                 />
                 <div className="p-8 flex flex-col flex-1">
                   <p className="section-label-en text-xs text-brand-600 mb-2">
@@ -167,7 +167,7 @@ export default function BusinessPage() {
             {serviceAreas.map((area) => (
               <div
                 key={area.region}
-                className="bg-white p-8 border-l-4 border-brand-600"
+                className="bg-white p-8 border border-[color:var(--border)]"
               >
                 <h3 className="text-xl font-black mb-5 flex items-center gap-3">
                   <span className="text-brand-600">●</span>

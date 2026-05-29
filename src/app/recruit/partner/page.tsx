@@ -66,7 +66,7 @@ export default function PartnerRecruitPage() {
             ].map((p) => (
               <article
                 key={p.title}
-                className="bg-muted p-8 border-l-4 border-brand-600"
+                className="bg-white p-8 border border-[color:var(--border)]"
               >
                 <h3 className="text-xl font-black mb-4">{p.title}</h3>
                 <p className="text-sm leading-relaxed text-foreground/75">

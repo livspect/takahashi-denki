@@ -33,13 +33,14 @@ function Hero() {
           ELECTRICAL &middot; AIR-CONDITIONING &middot; PLUMBING
         </p>
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[1.45] tracking-[0.1em] mb-10">
-          電気・空調・給排水で、
+          電気・空調・給排水で
           <br />
-          暮らしと現場を支える。
+          暮らしと現場を支える
         </h1>
         <p className="text-sm sm:text-base leading-loose text-white/90 max-w-2xl mx-auto mb-12">
-          東京都大田区を拠点に、住宅・店舗・施設の電気工事から冷暖房・空調、給排水設備まで。
-          「現場の品質」と「人の成長」にこだわる設備工事会社です。
+          住宅・店舗・施設の電気工事から、冷暖房・空調、給排水まで。
+          東京都大田区を拠点に、現場の「困った」に分野を横断してお応えしてきました。
+          人と品質を大事にする、地域の設備工事会社です。
         </p>
         <div className="flex flex-wrap gap-5 justify-center">
           <Link
@@ -114,10 +115,10 @@ function BusinessIntro() {
                 href="/business#scope"
                 className="group relative bg-white border border-[color:var(--border)] overflow-hidden flex flex-col hover:border-brand-500 transition-colors h-full"
               >
-                <PlaceholderImage
-                  variant={i === 1 ? "orange" : "blue"}
-                  ratio="video"
-                  label={p.en}
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full aspect-video object-cover"
                 />
                 <div className="p-8 lg:p-10 flex flex-col flex-1">
                   <p className="section-label-en text-xs text-brand-500 tracking-[0.2em] mb-4">
@@ -394,7 +395,7 @@ function AreaSection() {
         </Reveal>
         <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
           {serviceAreas.map((area) => (
-            <div key={area.region} className="bg-white p-8 border-l-4 border-brand-500">
+            <div key={area.region} className="bg-white p-8 border border-[color:var(--border)]">
               <h3 className="text-xl font-black mb-5 flex items-center gap-3">
                 <span className="text-brand-600">●</span>
                 {area.region}

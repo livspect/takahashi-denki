@@ -24,7 +24,7 @@ export default function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+    <section className="relative min-h-[78vh] sm:min-h-[80vh] lg:min-h-[640px] flex items-center justify-center text-white overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={asset("/stock/hands.jpg")}
@@ -35,11 +35,11 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-700/55 via-brand-600/55 to-brand-500/65" />
       </div>
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-12 text-center animate-fade-up">
-        <p className="text-xl sm:text-4xl lg:text-6xl font-bold tracking-[0.05em] sm:tracking-[0.08em] mb-4 sm:mb-6 lg:mb-8 [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
+        <p className="text-xl sm:text-4xl lg:text-6xl font-bold tracking-[0.05em] sm:tracking-[0.08em] mb-3 sm:mb-4 lg:mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
           電気・空調・給排水・地域密着
         </p>
-        <div className="bg-white w-full max-w-[1100px] mx-auto px-4 sm:px-10 py-4 sm:py-6 lg:py-8 mb-4 sm:mb-6 lg:mb-8 shadow-[0_10px_40px_rgba(0,0,0,0.18)]">
-          <h1 className="text-2xl sm:text-5xl lg:text-[68px] font-black text-foreground tracking-wide [word-break:keep-all]">
+        <div className="bg-white w-full max-w-[1280px] mx-auto px-4 sm:px-10 py-5 sm:py-8 lg:py-12 mb-3 sm:mb-4 lg:mb-6 shadow-[0_10px_40px_rgba(0,0,0,0.18)]">
+          <h1 className="text-2xl sm:text-5xl lg:text-[72px] font-black text-foreground tracking-wide [word-break:keep-all]">
             有限会社
             <span className="text-brand-500">たかはし</span>
             電器

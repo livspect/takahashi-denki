@@ -34,18 +34,18 @@ function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-700/55 via-brand-600/55 to-brand-500/65" />
       </div>
-      <div className="relative z-10 px-4 sm:px-6 text-center max-w-5xl animate-fade-up">
-        <p className="text-base sm:text-2xl lg:text-3xl font-bold tracking-[0.1em] sm:tracking-[0.18em] mb-8 sm:mb-12 [text-shadow:0_2px_10px_rgba(0,0,0,0.45)]">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-12 text-center animate-fade-up">
+        <p className="text-xl sm:text-4xl lg:text-6xl font-bold tracking-[0.05em] sm:tracking-[0.08em] mb-4 sm:mb-6 lg:mb-8 [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
           電気・空調・給排水・地域密着
         </p>
-        <div className="inline-block bg-white px-6 sm:px-12 lg:px-16 py-4 sm:py-6 lg:py-8 mb-8 sm:mb-12 shadow-[0_10px_40px_rgba(0,0,0,0.15)]">
-          <h1 className="text-xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-wider [word-break:keep-all]">
+        <div className="bg-white w-full max-w-[1100px] mx-auto px-4 sm:px-10 py-4 sm:py-6 lg:py-8 mb-4 sm:mb-6 lg:mb-8 shadow-[0_10px_40px_rgba(0,0,0,0.18)]">
+          <h1 className="text-2xl sm:text-5xl lg:text-[68px] font-black text-foreground tracking-wide [word-break:keep-all]">
             有限会社
             <span className="text-brand-500">たかはし</span>
             電器
           </h1>
         </div>
-        <p className="text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto [text-shadow:0_2px_10px_rgba(0,0,0,0.4)]">
+        <p className="text-sm sm:text-lg lg:text-2xl font-medium tracking-wide [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
           東京都大田区を拠点に、暮らしと現場を支える設備工事会社
         </p>
       </div>

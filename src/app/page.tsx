@@ -27,45 +27,29 @@ function Hero() {
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={asset("/stock/electrical.jpg")}
+          src={asset("/stock/worker.jpg")}
           alt=""
           aria-hidden
-          className="w-full h-full object-cover scale-110 blur-[3px]"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 cover-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-700/55 via-brand-600/55 to-brand-500/65" />
       </div>
-      <div className="relative z-10 px-6 text-center max-w-4xl animate-fade-up">
-        <p className="section-label-en text-[10px] sm:text-sm tracking-[0.2em] sm:tracking-[0.32em] text-white/85 mb-8 sm:mb-10">
-          ELECTRICAL &middot; AIR-CONDITIONING &middot; PLUMBING
+      <div className="relative z-10 px-4 sm:px-6 text-center max-w-5xl animate-fade-up">
+        <p className="text-base sm:text-2xl lg:text-3xl font-bold tracking-[0.1em] sm:tracking-[0.18em] mb-8 sm:mb-12 [text-shadow:0_2px_10px_rgba(0,0,0,0.45)]">
+          電気・空調・給排水・地域密着
         </p>
-        <h1 className="text-[2rem] sm:text-6xl lg:text-7xl font-black leading-[1.4] sm:leading-[1.45] tracking-[0.04em] sm:tracking-[0.08em] lg:tracking-[0.1em] mb-8 sm:mb-10 [word-break:keep-all] [overflow-wrap:break-word]">
-          電気・空調・給排水で
-          <br />
-          暮らしと現場を支える
-        </h1>
-        <p className="text-sm sm:text-base leading-relaxed sm:leading-loose text-white/90 max-w-2xl mx-auto mb-10 sm:mb-12">
-          住宅・店舗・施設の電気工事から、冷暖房・空調、給排水まで。
-          東京都大田区を拠点に、現場の「困った」に分野を横断してお応えしてきました。
-          人と品質を大事にする、地域の設備工事会社です。
-        </p>
-        <div className="flex flex-wrap gap-5 justify-center">
-          <Link
-            href="/business"
-            className="inline-flex items-center gap-3 border border-white/70 hover:bg-white hover:text-brand-700 transition-colors px-9 py-4 text-sm tracking-[0.15em] font-medium"
-          >
-            事業内容を見る
-            <span aria-hidden>→</span>
-          </Link>
-          <Link
-            href="/recruit"
-            className="inline-flex items-center gap-3 border border-white/70 hover:bg-white hover:text-brand-700 transition-colors px-9 py-4 text-sm tracking-[0.15em] font-medium"
-          >
-            採用情報を見る
-            <span aria-hidden>→</span>
-          </Link>
+        <div className="inline-block bg-white px-6 sm:px-12 lg:px-16 py-4 sm:py-6 lg:py-8 mb-8 sm:mb-12 shadow-[0_10px_40px_rgba(0,0,0,0.15)]">
+          <h1 className="text-xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-wider [word-break:keep-all]">
+            有限会社
+            <span className="text-brand-500">たかはし</span>
+            電器
+          </h1>
         </div>
+        <p className="text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto [text-shadow:0_2px_10px_rgba(0,0,0,0.4)]">
+          東京都大田区を拠点に、暮らしと現場を支える設備工事会社
+        </p>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 text-white/80">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 text-white/85">
         <p className="section-label-en text-[10px] tracking-[0.35em]">SCROLL</p>
         <span className="relative block w-px h-12 bg-white/30 overflow-hidden">
           <span className="scroll-dot absolute top-0 left-0 block w-px h-4 bg-white" />

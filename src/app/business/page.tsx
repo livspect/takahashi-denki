@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { asset } from "@/lib/assets";
 import { businessPillars, serviceAreas, site } from "@/lib/site";
 
 export const metadata = {
@@ -33,7 +34,7 @@ export default function BusinessPage() {
                 className="bg-white border border-[color:var(--border)] overflow-hidden flex flex-col"
               >
                 <img
-                  src={p.image}
+                  src={asset(p.image)}
                   alt={p.title}
                   className="w-full aspect-video object-cover"
                 />

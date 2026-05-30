@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { Reveal } from "@/components/Reveal";
+import { asset } from "@/lib/assets";
 import { formatBlogDate, getBlogPosts } from "@/lib/microcms";
 import { businessPillars, serviceAreas, site } from "@/lib/site";
 
@@ -116,7 +117,7 @@ function BusinessIntro() {
                 className="group relative bg-white border border-[color:var(--border)] overflow-hidden flex flex-col hover:border-brand-500 transition-colors h-full"
               >
                 <img
-                  src={p.image}
+                  src={asset(p.image)}
                   alt={p.title}
                   className="w-full aspect-video object-cover"
                 />
@@ -234,7 +235,7 @@ function WorksPreview() {
               <article className="group">
                 <div className="overflow-hidden">
                   <img
-                    src={w.image}
+                    src={asset(w.image)}
                     alt={w.title}
                     className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
                   />

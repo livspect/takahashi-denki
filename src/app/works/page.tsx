@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { asset } from "@/lib/assets";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -119,7 +120,7 @@ export default function WorksPage() {
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={w.image}
+                    src={asset(w.image)}
                     alt={w.title}
                     className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
                   />

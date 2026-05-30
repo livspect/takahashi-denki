@@ -27,7 +27,7 @@ function Hero() {
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={asset("/stock/worker.jpg")}
+          src={asset("/stock/electrical.jpg")}
           alt=""
           aria-hidden
           className="w-full h-full object-cover"

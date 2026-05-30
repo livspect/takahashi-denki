@@ -24,7 +24,7 @@ export default function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative min-h-[78vh] sm:min-h-[80vh] lg:min-h-[640px] flex items-center justify-center text-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={asset("/stock/hands.jpg")}

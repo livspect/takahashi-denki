@@ -278,16 +278,8 @@ function WorkplaceSection() {
     },
   ];
   return (
-    <section className="py-16 sm:py-28 lg:py-40 text-white relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={asset("/stock/lighting.jpg")}
-          alt=""
-          aria-hidden
-          className="w-full h-full object-cover scale-105 blur-[2px]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-700/65 via-brand-600/60 to-brand-500/70" />
-      </div>
+    <section className="py-16 sm:py-28 lg:py-40 text-white relative overflow-hidden bg-gradient-to-br from-brand-500 via-brand-600 to-brand-700">
+      <div className="absolute -top-40 left-1/4 w-[700px] h-[500px] bg-brand-300/15 rounded-full blur-3xl pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
           <div className="flex justify-center">

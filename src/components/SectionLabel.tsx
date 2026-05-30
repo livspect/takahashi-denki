@@ -1,6 +1,6 @@
 type Props = {
   en: string;
-  jp: string;
+  jp: React.ReactNode;
   align?: "left" | "center";
   invert?: boolean;
 };

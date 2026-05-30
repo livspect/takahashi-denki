@@ -22,7 +22,7 @@ export default function RecruitPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
             <div>
-              <SectionLabel en="MESSAGE" jp={"電気で、誰かの\n毎日を支える仕事。"} />
+              <SectionLabel en="MESSAGE" jp={"電気で、誰かの毎日を支える仕事"} />
               <div className="mt-8 space-y-5 text-base lg:text-lg leading-loose text-foreground/85">
                 <p>
                   電気・空調・給排水の設備工事は、目には見えにくいけれど、毎日の暮らしや経済活動を根っこから支える仕事です。

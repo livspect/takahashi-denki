@@ -26,8 +26,13 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-500 via-brand-700 to-brand-950" />
-        <div className="absolute -top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-brand-300/20 rounded-full blur-3xl" />
+        <img
+          src={asset("/stock/electrical.jpg")}
+          alt=""
+          aria-hidden
+          className="w-full h-full object-cover scale-110 blur-[3px]"
+        />
+        <div className="absolute inset-0 cover-overlay" />
       </div>
       <div className="relative z-10 px-6 text-center max-w-4xl animate-fade-up">
         <p className="section-label-en text-[10px] sm:text-sm tracking-[0.2em] sm:tracking-[0.32em] text-white/85 mb-8 sm:mb-10">
@@ -289,35 +294,49 @@ function WorkplaceSection() {
     },
   ];
   return (
-    <section className="py-16 sm:py-28 lg:py-40 bg-brand-950 text-white relative overflow-hidden">
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-brand-600/20 rounded-full blur-3xl" />
+    <section className="py-16 sm:py-28 lg:py-40 text-white relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src={asset("/stock/lighting.jpg")}
+          alt=""
+          aria-hidden
+          className="w-full h-full object-cover scale-105 blur-[2px]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-950/95 via-brand-950/90 to-brand-950/95" />
+      </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
           <div className="flex justify-center">
             <SectionLabel
               en="WORKPLACE"
-              jp={"働きやすさは、仕組みでつくる。"}
+              jp={
+                <>
+                  働きやすさは
+                  <span className="text-brand-300">仕組み</span>
+                  でつくる
+                </>
+              }
               align="center"
               invert
             />
           </div>
-          <p className="mt-8 text-base leading-loose text-brand-100/80">
+          <p className="mt-8 text-base leading-loose text-brand-100/80 [word-break:auto-phrase]">
             設備工事の仕事は「きつい・忙しい」と言われがち。
             たかはし電器は、そのイメージを変えるために、現場運営の仕組みからアップデートしています。
             人が長く働けるからこそ、技術が積み上がり、お客様への提供価値も高まる。私たちはそう考えています。
           </p>
         </Reveal>
-        <div className="grid sm:grid-cols-2 gap-px bg-white/10 border border-white/10">
+        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
           {points.map((p, i) => (
-            <Reveal key={p.n} delay={i * 100} className="bg-brand-950">
-              <div className="p-8 lg:p-12 h-full">
+            <Reveal key={p.n} delay={i * 100}>
+              <div className="bg-white/[0.03] backdrop-blur-sm p-8 lg:p-12 h-full">
                 <p className="text-5xl font-black text-brand-300/90 mb-5">
                   {p.n}
                 </p>
-                <h3 className="text-xl lg:text-2xl font-black tracking-wider mb-4">
+                <h3 className="text-xl lg:text-2xl font-black tracking-wider mb-4 [word-break:auto-phrase]">
                   {p.title}
                 </h3>
-                <p className="text-sm leading-loose text-brand-100/75">
+                <p className="text-sm leading-loose text-brand-100/75 [word-break:auto-phrase]">
                   {p.body}
                 </p>
               </div>

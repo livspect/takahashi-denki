@@ -9,10 +9,9 @@ type Props = {
 
 export function PageHeader({ en, jp, description, breadcrumbs = [] }: Props) {
   return (
-    <section className="relative bg-brand-950 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-950 to-black" />
-      <div className="absolute inset-0 bg-grid opacity-25" />
-      <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-brand-600/20 rounded-full blur-3xl" />
+    <section className="relative bg-brand-600 text-white overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-500 via-brand-600 to-brand-700" />
+      <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-brand-300/20 rounded-full blur-3xl" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <nav className="text-xs text-brand-200/80 mb-8 flex items-center gap-2 flex-wrap">
           <Link href="/" className="hover:text-white">

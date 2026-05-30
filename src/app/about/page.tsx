@@ -117,7 +117,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="csr" className="py-16 sm:py-24 lg:py-32 bg-brand-950 text-white relative overflow-hidden">
+      <section id="csr" className="py-16 sm:py-24 lg:py-32 bg-brand-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">

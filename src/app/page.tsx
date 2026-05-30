@@ -67,7 +67,7 @@ function StatsBand() {
     { num: "98", unit: "%", label: "リピート受注率" },
   ];
   return (
-    <section className="bg-brand-950 text-white">
+    <section className="bg-brand-700 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
         {stats.map((m) => (
           <div key={m.label} className="py-8 lg:py-10 px-4 lg:px-6 text-center">
@@ -286,7 +286,7 @@ function WorkplaceSection() {
           aria-hidden
           className="w-full h-full object-cover scale-105 blur-[2px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-950/95 via-brand-950/90 to-brand-950/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-700/65 via-brand-600/60 to-brand-500/70" />
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
@@ -359,7 +359,7 @@ function RecruitHighlight() {
               社員募集を見る <span aria-hidden>→</span>
             </Link>
           </div>
-          <div className="bg-brand-950 text-white p-10 lg:p-14 flex flex-col relative overflow-hidden">
+          <div className="bg-brand-700 text-white p-10 lg:p-14 flex flex-col relative overflow-hidden">
             <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-brand-600/25 rounded-full blur-3xl" />
             <p className="section-label-en text-xs text-brand-300 mb-4 relative tracking-[0.2em]">
               FOR PARTNERS
@@ -424,7 +424,7 @@ function AreaSection() {
 
 function ContactCTA() {
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-brand-500 via-brand-700 to-brand-950 text-white overflow-hidden">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-brand-500 via-brand-700 to-brand-700 text-white overflow-hidden">
       <div className="absolute -top-32 right-0 w-[700px] h-[500px] bg-brand-400/20 rounded-full blur-3xl" />
       <Reveal className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="section-label-en text-xs text-white/80 tracking-[0.3em] mb-6">

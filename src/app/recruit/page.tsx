@@ -150,7 +150,7 @@ export default function RecruitPage() {
               },
             ].map((p) => (
               <article key={p.role} className="border border-[color:var(--border)]">
-                <header className="bg-brand-950 text-white p-6 lg:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <header className="bg-brand-700 text-white p-6 lg:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <div>
                     <p className="text-xs text-brand-300 font-bold tracking-widest mb-1">
                       {p.type}

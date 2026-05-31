@@ -296,7 +296,7 @@ function WorkplaceSection() {
               invert
             />
           </div>
-          <p className="mt-8 text-base leading-loose text-brand-100/80 [word-break:auto-phrase]">
+          <p className="mt-8 text-base leading-loose text-white/90 [word-break:auto-phrase]">
             設備工事の仕事は「きつい・忙しい」と言われがち。
             たかはし電器は、そのイメージを変えるために、現場運営の仕組みからアップデートしています。
             人が長く働けるからこそ、技術が積み上がり、お客様への提供価値も高まる。私たちはそう考えています。
@@ -312,7 +312,7 @@ function WorkplaceSection() {
                 <h3 className="text-xl lg:text-2xl font-black tracking-wider mb-4 [word-break:auto-phrase]">
                   {p.title}
                 </h3>
-                <p className="text-sm leading-loose text-brand-100/75 [word-break:auto-phrase]">
+                <p className="text-sm leading-loose text-white/85 [word-break:auto-phrase]">
                   {p.body}
                 </p>
               </div>
@@ -331,17 +331,17 @@ function RecruitHighlight() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           <div className="bg-brand-600 text-white p-10 lg:p-14 flex flex-col relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-80 h-80 bg-brand-400/30 rounded-full blur-3xl" />
-            <p className="section-label-en text-xs text-brand-100 mb-4 relative">
+            <p className="section-label-en text-xs text-white/90 mb-4 relative">
               FOR JOB SEEKERS
             </p>
             <h3 className="text-3xl lg:text-4xl font-black mb-6 relative leading-tight">
               社員募集
               <br />
-              <span className="text-brand-100 text-xl lg:text-2xl">
+              <span className="text-white/90 text-xl lg:text-2xl">
                 経験者・未経験者ともに歓迎
               </span>
             </h3>
-            <p className="text-sm leading-relaxed text-brand-50/90 mb-10 relative">
+            <p className="text-sm leading-relaxed text-white/95 mb-10 relative">
               新卒・中途、ブランクがある方も大歓迎。「電気で人の役に立ちたい」その想いがあれば、技術はあとから必ず身につきます。
             </p>
             <Link
@@ -363,7 +363,7 @@ function RecruitHighlight() {
                 共に成長できるパートナーへ
               </span>
             </h3>
-            <p className="text-sm leading-relaxed text-brand-100/85 mb-10 relative">
+            <p className="text-sm leading-relaxed text-white/95 mb-10 relative">
               大田区周辺で、長期的に協業いただける電気・空調・給排水工事の協力会社様を募集しています。継続案件・公正な単価・スピーディーな支払いをお約束します。
             </p>
             <Link

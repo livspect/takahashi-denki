@@ -93,7 +93,7 @@ export default function BusinessPage() {
               <article key={s.n} className="bg-white/5 border border-white/15 p-8 lg:p-10">
                 <p className="text-5xl font-black text-brand-300 mb-4">{s.n}</p>
                 <h3 className="text-2xl font-black mb-4">{s.title}</h3>
-                <p className="text-sm leading-relaxed text-brand-100/85">
+                <p className="text-sm leading-relaxed text-white/95">
                   {s.body}
                 </p>
               </article>

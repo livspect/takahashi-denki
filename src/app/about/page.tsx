@@ -143,10 +143,10 @@ export default function AboutPage() {
               },
             ].map((c) => (
               <article key={c.title} className="border border-white/15 p-8 lg:p-10 bg-white/5">
-                <h3 className="text-xl font-black mb-4 text-brand-200">
+                <h3 className="text-xl font-black mb-4 text-white">
                   {c.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-brand-100/85">
+                <p className="text-sm leading-relaxed text-white/95">
                   {c.body}
                 </p>
               </article>

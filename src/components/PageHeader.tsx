@@ -31,11 +31,11 @@ export function PageHeader({ en, jp, description, breadcrumbs = [] }: Props) {
           ))}
         </nav>
         <p className="section-label-en text-xs text-brand-300 mb-4">{en}</p>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black mb-6 leading-snug">
           {jp}
         </h1>
         {description && (
-          <p className="text-base lg:text-lg text-brand-100/85 max-w-2xl leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-brand-100/85 max-w-2xl leading-relaxed">
             {description}
           </p>
         )}

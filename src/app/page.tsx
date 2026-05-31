@@ -305,7 +305,7 @@ function WorkplaceSection() {
         <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
           {points.map((p, i) => (
             <Reveal key={p.n} delay={i * 100}>
-              <div className="bg-white/[0.03] backdrop-blur-sm p-8 lg:p-12 h-full">
+              <div className="bg-white/15 border border-white/30 backdrop-blur-sm p-8 lg:p-12 h-full shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
                 <p className="text-5xl font-black text-brand-300/90 mb-5">
                   {p.n}
                 </p>

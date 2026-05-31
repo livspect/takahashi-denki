@@ -18,7 +18,7 @@ export function SectionLabel({ en, jp, align = "left", invert = false }: Props) 
         {align === "center" && <span className={`w-8 h-px ${lineColor}`} />}
       </div>
       <h2
-        className={`text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight ${titleColor}`}
+        className={`text-2xl sm:text-3xl lg:text-5xl font-black leading-snug tracking-tight ${titleColor}`}
       >
         {jp}
       </h2>

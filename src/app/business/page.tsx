@@ -90,9 +90,9 @@ export default function BusinessPage() {
                 body: "新しい設備の取り付けだけでなく、既存設備の修理・点検・入替にも対応。長くお付き合いいただけるよう、アフターフォローも大切にしています。",
               },
             ].map((s) => (
-              <article key={s.n} className="bg-white/5 border border-white/15 p-8 lg:p-10">
-                <p className="text-5xl font-black text-brand-300 mb-4">{s.n}</p>
-                <h3 className="text-2xl font-black mb-4">{s.title}</h3>
+              <article key={s.n} className="bg-white/15 border border-white/30 p-8 lg:p-10 backdrop-blur-sm shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+                <p className="text-5xl font-black text-white/70 mb-4">{s.n}</p>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-black mb-4 leading-snug">{s.title}</h3>
                 <p className="text-sm leading-relaxed text-white/95">
                   {s.body}
                 </p>

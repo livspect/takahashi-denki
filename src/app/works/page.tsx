@@ -1,6 +1,5 @@
 import { PageHeader } from "@/components/PageHeader";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
-import { asset } from "@/lib/assets";
+import { WorksFilter } from "@/components/WorksFilter";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -94,74 +93,13 @@ export default function WorksPage() {
 
       <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-2 mb-10">
-            {["すべて", "電気", "空調", "給排水"].map(
-              (tag, i) => (
-                <button
-                  key={tag}
-                  type="button"
-                  className={`px-5 py-2 text-sm font-bold border transition-colors ${
-                    i === 0
-                      ? "bg-brand-600 text-white border-brand-600"
-                      : "border-[color:var(--border)] hover:border-brand-600 hover:text-brand-700"
-                  }`}
-                >
-                  {tag}
-                </button>
-              )
-            )}
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {works.map((w, i) => (
-              <article
-                key={w.title}
-                className="group bg-white border border-[color:var(--border)] hover:border-brand-500 transition-colors"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={asset(w.image)}
-                    alt={w.title}
-                    className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span className="absolute top-3 left-3 bg-white text-brand-800 text-xs font-bold px-3 py-1">
-                    {w.cat}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <p className="text-xs text-brand-700 font-bold mb-3">
-                    {w.area} ／ {w.year} ／ {w.scale}
-                  </p>
-                  <h3 className="text-lg font-black leading-snug mb-3 group-hover:text-brand-700 transition-colors">
-                    {w.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-foreground/70">
-                    {w.summary}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-16 flex justify-center">
-            <nav className="flex items-center gap-2">
-              {["‹", "1", "2", "3", "›"].map((p, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  className={`w-10 h-10 text-sm font-bold border transition-colors ${
-                    p === "1"
-                      ? "bg-brand-600 text-white border-brand-600"
-                      : "border-[color:var(--border)] hover:border-brand-600 hover:text-brand-700"
-                  }`}
-                >
-                  {p}
-                </button>
-              ))}
-            </nav>
-          </div>
+          <WorksFilter
+            works={works}
+            categories={["すべて", "電気", "空調", "給排水"]}
+          />
         </div>
       </section>
     </>
   );
 }
+

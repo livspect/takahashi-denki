@@ -1,6 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { asset } from "@/lib/assets";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -45,21 +45,25 @@ export default function AboutPage() {
               {
                 title: "対話を大切にするチーム",
                 body: "週次のミーティング・現場朝礼・1on1を組み合わせて、立場に関わらず意見を言い合える環境を整えています。",
+                image: "/stock/ductwork.jpg",
               },
               {
                 title: "若手とベテランの交流",
                 body: "20代から60代まで幅広い世代が在籍。ベテランの知見と若手の発想が掛け合わさり、現場運営にも良い循環が生まれています。",
+                image: "/stock/hands.jpg",
               },
               {
                 title: "学びを奨励する文化",
                 body: "外部研修・資格取得支援・社内勉強会を通じて、誰もが自発的に成長できる仕組みを用意しています。",
+                image: "/stock/lighting.jpg",
               },
-            ].map((c, i) => (
+            ].map((c) => (
               <article key={c.title} className="bg-white p-8 lg:p-10 relative">
-                <PlaceholderImage
-                  variant={i === 1 ? "orange" : "blue"}
-                  ratio="video"
-                  className="-mx-8 -mt-8 lg:-mx-10 lg:-mt-10 mb-8"
+                <img
+                  src={asset(c.image)}
+                  alt={c.title}
+                  className="w-full aspect-video object-cover -mx-8 -mt-8 lg:-mx-10 lg:-mt-10 mb-8"
+                  style={{ width: "calc(100% + 4rem)" }}
                 />
                 <h3 className="text-xl font-black mb-4">{c.title}</h3>
                 <p className="text-sm leading-relaxed text-foreground/75">

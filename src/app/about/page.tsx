@@ -45,17 +45,17 @@ export default function AboutPage() {
               {
                 title: "対話を大切にするチーム",
                 body: "週次のミーティング・現場朝礼・1on1を組み合わせて、立場に関わらず意見を言い合える環境を整えています。",
-                image: "/stock/ductwork.jpg",
+                image: "/stock/team-blueprint.jpg",
               },
               {
                 title: "若手とベテランの交流",
                 body: "20代から60代まで幅広い世代が在籍。ベテランの知見と若手の発想が掛け合わさり、現場運営にも良い循環が生まれています。",
-                image: "/stock/hands.jpg",
+                image: "/stock/tools.jpg",
               },
               {
                 title: "学びを奨励する文化",
                 body: "外部研修・資格取得支援・社内勉強会を通じて、誰もが自発的に成長できる仕組みを用意しています。",
-                image: "/stock/lighting.jpg",
+                image: "/stock/workshop.jpg",
               },
             ].map((c) => (
               <article key={c.title} className="bg-white overflow-hidden">

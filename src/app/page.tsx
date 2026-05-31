@@ -38,7 +38,7 @@ function Hero() {
         <p className="text-xl sm:text-4xl lg:text-6xl font-bold tracking-[0.05em] sm:tracking-[0.08em] mb-3 sm:mb-4 lg:mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
           電気・空調・給排水・地域密着
         </p>
-        <div className="bg-white w-full max-w-[1280px] mx-auto px-4 sm:px-10 py-5 sm:py-8 lg:py-12 mb-3 sm:mb-4 lg:mb-6 shadow-[0_10px_40px_rgba(0,0,0,0.18)]">
+        <div className="bg-white w-full max-w-[1100px] mx-auto px-4 sm:px-8 py-2 sm:py-3 lg:py-4 mb-3 sm:mb-4 lg:mb-6 shadow-[0_10px_40px_rgba(0,0,0,0.18)]">
           <h1 className="text-2xl sm:text-5xl lg:text-[72px] font-black text-foreground tracking-wide [word-break:keep-all]">
             有限会社
             <span className="text-brand-500">たかはし</span>

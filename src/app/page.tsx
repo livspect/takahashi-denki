@@ -288,7 +288,7 @@ function WorkplaceSection() {
               jp={
                 <>
                   働きやすさは
-                  <span className="text-brand-300">仕組み</span>
+                  <span className="text-yellow-300 underline decoration-yellow-300/70 decoration-[3px] underline-offset-[6px]">仕組み</span>
                   でつくる
                 </>
               }

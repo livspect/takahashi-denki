@@ -58,17 +58,18 @@ export default function AboutPage() {
                 image: "/stock/lighting.jpg",
               },
             ].map((c) => (
-              <article key={c.title} className="bg-white p-8 lg:p-10 relative">
+              <article key={c.title} className="bg-white overflow-hidden">
                 <img
                   src={asset(c.image)}
                   alt={c.title}
-                  className="w-full aspect-video object-cover -mx-8 -mt-8 lg:-mx-10 lg:-mt-10 mb-8"
-                  style={{ width: "calc(100% + 4rem)" }}
+                  className="w-full aspect-video object-cover"
                 />
-                <h3 className="text-xl font-black mb-4">{c.title}</h3>
-                <p className="text-sm leading-relaxed text-foreground/75">
-                  {c.body}
-                </p>
+                <div className="p-8 lg:p-10">
+                  <h3 className="text-xl font-black mb-4">{c.title}</h3>
+                  <p className="text-sm leading-relaxed text-foreground/75">
+                    {c.body}
+                  </p>
+                </div>
               </article>
             ))}
           </div>

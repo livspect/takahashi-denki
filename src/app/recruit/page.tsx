@@ -93,7 +93,7 @@ export default function RecruitPage() {
               ].map((b) => (
                 <article
                   key={b.t}
-                  className="bg-muted p-6 border-t-4 border-brand-600"
+                  className="bg-muted p-6"
                 >
                   <h3 className="font-black mb-3">{b.t}</h3>
                   <p className="text-sm leading-relaxed text-foreground/75">

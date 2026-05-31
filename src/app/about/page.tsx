@@ -142,7 +142,7 @@ export default function AboutPage() {
                 body: "近隣の就労支援施設と連携し、定期的に作業委託を行っています。多様な人がともに働く社会を目指して。",
               },
             ].map((c) => (
-              <article key={c.title} className="border border-white/15 p-8 lg:p-10 bg-white/5">
+              <article key={c.title} className="border border-white/25 p-8 lg:p-10 bg-white/15 backdrop-blur-sm shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
                 <h3 className="text-xl font-black mb-4 text-white">
                   {c.title}
                 </h3>

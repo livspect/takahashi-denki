@@ -72,7 +72,6 @@ export function Footer() {
               className="inline-flex items-center justify-center gap-2 w-full bg-white text-brand-900 px-5 py-3 text-sm font-bold hover:bg-brand-50 transition-colors"
             >
               お問い合わせフォーム
-              <span aria-hidden>→</span>
             </Link>
           </div>
         </div>

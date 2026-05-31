@@ -27,11 +27,6 @@ export function Header() {
               className="px-3 py-2 text-sm font-medium text-foreground hover:text-brand-600 transition-colors relative group"
             >
               <span className="block">{item.label}</span>
-              {item.en && (
-                <span className="block text-[10px] tracking-widest text-brand-500/70 font-bold">
-                  {item.en}
-                </span>
-              )}
               <span className="absolute left-3 right-3 bottom-0 h-[2px] bg-brand-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </Link>
           ))}
@@ -79,11 +74,6 @@ export function Header() {
                 className="py-3 border-b border-[color:var(--border)] flex items-baseline justify-between"
               >
                 <span className="font-bold">{item.label}</span>
-                {item.en && (
-                  <span className="text-[10px] tracking-widest text-brand-500/70 font-bold">
-                    {item.en}
-                  </span>
-                )}
               </Link>
             ))}
             <Link

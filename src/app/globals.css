@@ -61,6 +61,21 @@ h3 {
   letter-spacing: 0.06em;
 }
 
+/* Japanese natural line breaking — phrase-aware where supported (Chrome/Edge 119+) */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+dd {
+  word-break: auto-phrase;
+  line-break: strict;
+  overflow-wrap: break-word;
+}
+
 .bg-grid {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),

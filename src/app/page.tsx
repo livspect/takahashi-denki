@@ -442,7 +442,7 @@ function ContactCTA() {
             href="/contact"
             className="inline-flex items-center gap-3 border border-white px-8 py-4 font-bold text-sm hover:bg-white hover:text-brand-900 transition-colors"
           >
-            お問い合わせフォーム <span aria-hidden>→</span>
+            お問い合わせフォーム
           </Link>
         </div>
       </Reveal>

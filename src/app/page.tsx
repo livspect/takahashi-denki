@@ -11,6 +11,13 @@ import { faqSchema } from "@/lib/schema";
 export default function HomePage() {
   return (
     <>
+      {/* LCP（ヒーロー画像）を最優先で取得させる */}
+      <link
+        rel="preload"
+        as="image"
+        href={asset("/stock/hands.webp")}
+        fetchPriority="high"
+      />
       <Hero />
       <StatsBand />
       <BusinessIntro />
@@ -30,9 +37,10 @@ function Hero() {
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pb-20 sm:pb-0">
       <div className="absolute inset-0">
         <img
-          src={asset("/stock/hands.jpg")}
+          src={asset("/stock/hands.webp")}
           alt=""
           aria-hidden
+          fetchPriority="high"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-700/55 via-brand-600/55 to-brand-500/65" />
@@ -74,7 +82,7 @@ function StatsBand() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
         {stats.map((m) => (
           <div key={m.label} className="py-8 lg:py-10 px-4 lg:px-6 text-center">
-            <p className="text-[11px] text-brand-300 tracking-[0.2em] mb-3">
+            <p className="text-[11px] text-white tracking-[0.2em] mb-3">
               {m.label}
             </p>
             <p className="font-black">
@@ -111,10 +119,12 @@ function BusinessIntro() {
                 <img
                   src={asset(p.image)}
                   alt={p.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full aspect-video object-cover"
                 />
                 <div className="p-8 lg:p-10 flex flex-col flex-1">
-                  <p className="section-label-en text-xs text-brand-500 tracking-[0.2em] mb-4">
+                  <p className="section-label-en text-xs text-brand-700 tracking-[0.2em] mb-4">
                     {`0${i + 1} / ${p.en}`}
                   </p>
                   <h3 className="text-2xl font-black tracking-wider mb-4">
@@ -162,6 +172,8 @@ async function BlogPreview() {
                     <img
                       src={p.thumbnail.url}
                       alt={p.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full aspect-video object-cover"
                     />
                   ) : (
@@ -198,7 +210,7 @@ async function BlogPreview() {
         <Reveal className="flex justify-center mt-16">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-3 border border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white transition-colors px-10 py-4 text-sm tracking-[0.15em] font-medium"
+            className="inline-flex items-center gap-3 border border-brand-700 text-brand-700 hover:bg-brand-700 hover:text-white transition-colors px-10 py-4 text-sm tracking-[0.15em] font-medium"
           >
             ブログ記事一覧へ <span aria-hidden>→</span>
           </Link>
@@ -210,10 +222,10 @@ async function BlogPreview() {
 
 function WorksPreview() {
   const works = [
-    { title: "店舗 照明・配線設備工事", area: "東京都大田区", year: "2025", image: "/stock/lighting.jpg" },
-    { title: "業務用エアコン入替工事", area: "東京都品川区", year: "2025", image: "/stock/ac.jpg" },
-    { title: "給湯・給水設備の改修工事", area: "東京都大田区", year: "2024", image: "/stock/plumbing.jpg" },
-    { title: "住宅 コンセント増設・電気工事", area: "東京都目黒区", year: "2024", image: "/stock/electrical.jpg" },
+    { title: "店舗 照明・配線設備工事", area: "東京都大田区", year: "2025", image: "/stock/lighting.webp" },
+    { title: "業務用エアコン入替工事", area: "東京都品川区", year: "2025", image: "/stock/ac.webp" },
+    { title: "給湯・給水設備の改修工事", area: "東京都大田区", year: "2024", image: "/stock/plumbing.webp" },
+    { title: "住宅 コンセント増設・電気工事", area: "東京都目黒区", year: "2024", image: "/stock/electrical.webp" },
   ];
   return (
     <section className="py-16 sm:py-28 lg:py-40 bg-white">
@@ -229,6 +241,8 @@ function WorksPreview() {
                   <img
                     src={asset(w.image)}
                     alt={w.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -247,7 +261,7 @@ function WorksPreview() {
         <Reveal className="flex justify-center mt-16">
           <Link
             href="/works"
-            className="inline-flex items-center gap-3 border border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white transition-colors px-10 py-4 text-sm tracking-[0.15em] font-medium"
+            className="inline-flex items-center gap-3 border border-brand-700 text-brand-700 hover:bg-brand-700 hover:text-white transition-colors px-10 py-4 text-sm tracking-[0.15em] font-medium"
           >
             施工事例一覧へ <span aria-hidden>→</span>
           </Link>
@@ -291,7 +305,7 @@ function WorkplaceSection() {
               jp={
                 <>
                   働きやすさは
-                  <span className="inline-block bg-white text-brand-600 px-3 py-0.5 mx-1 align-middle shadow-[0_8px_24px_rgba(0,0,0,0.18)]">仕組み</span>
+                  <span className="inline-block bg-white text-brand-600 px-3 py-1 mx-1 leading-none align-middle relative -top-[0.08em] shadow-[0_8px_24px_rgba(0,0,0,0.18)]">仕組み</span>
                   でつくる
                 </>
               }
@@ -332,9 +346,9 @@ function RecruitHighlight() {
     <section className="py-16 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
-          <div className="bg-brand-600 text-white p-10 lg:p-14 flex flex-col relative overflow-hidden">
+          <div className="bg-brand-700 text-white p-10 lg:p-14 flex flex-col relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-80 h-80 bg-brand-400/30 rounded-full blur-3xl" />
-            <p className="section-label-en text-xs text-white/90 mb-4 relative">
+            <p className="section-label-en text-xs text-white mb-4 relative">
               FOR JOB SEEKERS
             </p>
             <h3 className="text-3xl lg:text-4xl font-black mb-6 relative leading-tight">
@@ -356,15 +370,15 @@ function RecruitHighlight() {
               社員募集を見る <span aria-hidden>→</span>
             </Link>
           </div>
-          <div className="bg-brand-700 text-white p-10 lg:p-14 flex flex-col relative overflow-hidden">
+          <div className="bg-brand-800 text-white p-10 lg:p-14 flex flex-col relative overflow-hidden">
             <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-brand-600/25 rounded-full blur-3xl" />
-            <p className="section-label-en text-xs text-brand-300 mb-4 relative tracking-[0.2em]">
+            <p className="section-label-en text-xs text-white mb-4 relative tracking-[0.2em]">
               FOR PARTNERS
             </p>
             <h3 className="text-3xl lg:text-4xl font-black mb-6 relative leading-tight">
               協力会社募集
               <br />
-              <span className="text-brand-300 text-xl lg:text-2xl">
+              <span className="text-brand-200 text-xl lg:text-2xl">
                 共に成長できるパートナーへ
               </span>
             </h3>
@@ -454,11 +468,11 @@ function FaqSection() {
           {faqs.map((f) => (
             <div key={f.q} className="py-6">
               <dt className="flex gap-3 text-base lg:text-lg font-bold text-foreground">
-                <span className="text-brand-600 shrink-0">Q.</span>
+                <span className="text-brand-700 shrink-0">Q.</span>
                 <span>{f.q}</span>
               </dt>
               <dd className="mt-3 flex gap-3 text-sm leading-loose text-foreground/75">
-                <span className="text-brand-400 shrink-0 font-bold">A.</span>
+                <span className="text-brand-700 shrink-0 font-bold">A.</span>
                 <span>{f.a}</span>
               </dd>
             </div>

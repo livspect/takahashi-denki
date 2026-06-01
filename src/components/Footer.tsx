@@ -3,7 +3,7 @@ import { navigation, site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-brand-700 text-white relative overflow-hidden">
+    <footer className="bg-brand-900 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-grid pointer-events-none opacity-40" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid lg:grid-cols-[1.2fr_1fr_1fr] gap-12">

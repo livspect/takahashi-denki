@@ -16,7 +16,7 @@ export function pageMetadata(opts: {
   const canonical = url(opts.path);
   // Next は子セグメントの openGraph / twitter を親とマージせず置換するため、
   // 各ページでも OG 画像を明示的に指定する。
-  const ogImage = url("/stock/hands.jpg");
+  const ogImage = url("/stock/hands.webp");
   return {
     title: opts.title,
     description: opts.description,

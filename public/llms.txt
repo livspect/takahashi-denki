@@ -19,14 +19,14 @@
 
 ## 主要ページ
 
-- トップ: https://livspect.github.io/takahashi-denki/
-- 事業内容: https://livspect.github.io/takahashi-denki/business/
-- 施工事例: https://livspect.github.io/takahashi-denki/works/
-- 会社概要: https://livspect.github.io/takahashi-denki/about/
-- 採用情報: https://livspect.github.io/takahashi-denki/recruit/
-- 協力会社募集: https://livspect.github.io/takahashi-denki/recruit/partner/
-- ブログ: https://livspect.github.io/takahashi-denki/blog/
-- お問い合わせ: https://livspect.github.io/takahashi-denki/contact/
+- トップ: https://takahashi-denki.livspect.workers.dev/
+- 事業内容: https://takahashi-denki.livspect.workers.dev/business/
+- 施工事例: https://takahashi-denki.livspect.workers.dev/works/
+- 会社概要: https://takahashi-denki.livspect.workers.dev/about/
+- 採用情報: https://takahashi-denki.livspect.workers.dev/recruit/
+- 協力会社募集: https://takahashi-denki.livspect.workers.dev/recruit/partner/
+- ブログ: https://takahashi-denki.livspect.workers.dev/blog/
+- お問い合わせ: https://takahashi-denki.livspect.workers.dev/contact/
 
 ## 採用
 

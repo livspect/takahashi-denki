@@ -21,7 +21,7 @@ export const businessPillars = [
   {
     en: "ELECTRICAL",
     title: "電気工事",
-    image: "/stock/electrical.jpg",
+    image: "/stock/electrical.webp",
     body: "住宅・店舗・施設の屋内外配線から照明・コンセントまで、電気に関わる工事全般に対応します。",
     items: [
       "コンセント工事",
@@ -36,7 +36,7 @@ export const businessPillars = [
   {
     en: "AIR CONDITIONING",
     title: "空調工事",
-    image: "/stock/ac.jpg",
+    image: "/stock/ac.webp",
     body: "業務用・家庭用エアコンの設置から冷暖房・冷凍冷蔵・ダクトまで、快適な空調環境を整えます。",
     items: [
       "冷暖房設備工事",
@@ -48,7 +48,7 @@ export const businessPillars = [
   {
     en: "PLUMBING",
     title: "給排水・水道工事",
-    image: "/stock/plumbing.jpg",
+    image: "/stock/plumbing.webp",
     body: "給水・給湯・排水設備の新設や改修から、ガス配管・浄化槽まで、水まわりの設備を幅広く手がけます。",
     items: [
       "給水給湯設備工事",

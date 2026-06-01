@@ -22,7 +22,7 @@ export function organizationSchema(): Json {
     alternateName: site.shortName,
     url: url("/"),
     telephone: site.phone,
-    image: url("/stock/hands.jpg"),
+    image: url("/stock/hands.webp"),
     description: site.description,
     foundingDate: "2008-04",
     address: {
@@ -107,7 +107,7 @@ export function blogPostingSchema(post: {
     mainEntityOfPage: url(`/blog/${post.id}`),
     headline: post.title,
     ...(post.excerpt ? { description: post.excerpt } : {}),
-    image: [post.thumbnail?.url ?? url("/stock/hands.jpg")],
+    image: [post.thumbnail?.url ?? url("/stock/hands.webp")],
     datePublished: post.publishedAt,
     dateModified: post.revisedAt || post.publishedAt,
     inLanguage: "ja-JP",

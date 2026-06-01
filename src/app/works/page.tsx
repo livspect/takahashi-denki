@@ -16,7 +16,7 @@ const works = [
     area: "東京都大田区",
     year: "2025",
     scale: "物販店舗",
-    image: "/stock/lighting.jpg",
+    image: "/stock/lighting.webp",
     summary: "店舗リニューアルに合わせ、天井照明とコンセント配線を全面更新。営業を止めない夜間施工で対応しました。",
   },
   {
@@ -25,7 +25,7 @@ const works = [
     area: "東京都品川区",
     year: "2025",
     scale: "オフィス",
-    image: "/stock/ac.jpg",
+    image: "/stock/ac.webp",
     summary: "老朽化した天井カセット形エアコンを入替。配管・ドレンも合わせて点検し、空調効率を改善しました。",
   },
   {
@@ -34,7 +34,7 @@ const works = [
     area: "東京都大田区",
     year: "2024",
     scale: "戸建て住宅",
-    image: "/stock/plumbing.jpg",
+    image: "/stock/plumbing.webp",
     summary: "屋外の給湯器と給水配管を更新。漏水リスクを抑えつつ、快適な水まわり環境を整えました。",
   },
   {
@@ -43,7 +43,7 @@ const works = [
     area: "東京都目黒区",
     year: "2024",
     scale: "戸建て住宅",
-    image: "/stock/electrical.jpg",
+    image: "/stock/electrical.webp",
     summary: "家電の増加に合わせてコンセントを増設し、分電盤まわりも見直し。安全に使える配線へ整えました。",
   },
   {
@@ -52,7 +52,7 @@ const works = [
     area: "東京都大田区",
     year: "2024",
     scale: "飲食店",
-    image: "/stock/ductwork.jpg",
+    image: "/stock/ductwork.webp",
     summary: "飲食店の厨房ダクトと換気設備を施工。油汚れに配慮した清掃しやすい構成を採用しました。",
   },
   {
@@ -61,7 +61,7 @@ const works = [
     area: "東京都世田谷区",
     year: "2024",
     scale: "路面店",
-    image: "/stock/lighting.jpg",
+    image: "/stock/lighting.webp",
     summary: "店舗の看板・ネオンサインの電気工事を担当。視認性と省エネを両立する配線計画でご提案しました。",
   },
   {
@@ -70,7 +70,7 @@ const works = [
     area: "東京都品川区",
     year: "2023",
     scale: "集合住宅",
-    image: "/stock/plumbing.jpg",
+    image: "/stock/plumbing.webp",
     summary: "集合住宅のガス管配管を更新。気密試験を徹底し、安全性を最優先に施工しました。",
   },
   {
@@ -79,7 +79,7 @@ const works = [
     area: "東京都大田区",
     year: "2023",
     scale: "小売店",
-    image: "/stock/ac.jpg",
+    image: "/stock/ac.webp",
     summary: "小売店向けの冷凍冷蔵設備を設置。電源・冷媒配管まで一貫して対応しました。",
   },
 ];

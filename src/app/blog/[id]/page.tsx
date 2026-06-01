@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props) {
     post.excerpt || `${site.name}のブログ記事「${post.title}」。`;
   const images = post.thumbnail?.url
     ? [post.thumbnail.url]
-    : [url("/stock/hands.jpg")];
+    : [url("/stock/hands.webp")];
 
   return {
     title: post.title,

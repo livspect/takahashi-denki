@@ -5,6 +5,8 @@ import { Reveal } from "@/components/Reveal";
 import { asset } from "@/lib/assets";
 import { formatBlogDate, getBlogPosts } from "@/lib/microcms";
 import { businessPillars, serviceAreas, site } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { faqSchema } from "@/lib/schema";
 
 export default function HomePage() {
   return (
@@ -17,6 +19,7 @@ export default function HomePage() {
       <WorkplaceSection />
       <RecruitHighlight />
       <AreaSection />
+      <FaqSection />
       <ContactCTA />
     </>
   );
@@ -24,7 +27,7 @@ export default function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pb-20 sm:pb-0">
       <div className="absolute inset-0">
         <img
           src={asset("/stock/hands.jpg")}
@@ -35,11 +38,11 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-700/55 via-brand-600/55 to-brand-500/65" />
       </div>
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-12 text-center animate-fade-up">
-        <p className="text-xl sm:text-4xl lg:text-6xl font-bold tracking-[0.05em] sm:tracking-[0.08em] mb-3 sm:mb-4 lg:mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
+        <p className="text-2xl sm:text-4xl lg:text-6xl font-bold tracking-[0.03em] sm:tracking-[0.08em] whitespace-nowrap mb-4 sm:mb-4 lg:mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
           電気・空調・給排水・地域密着
         </p>
-        <div className="bg-white inline-block px-6 sm:px-10 lg:px-14 py-2 sm:py-3 lg:py-4 mb-3 sm:mb-4 lg:mb-6 shadow-[0_10px_40px_rgba(0,0,0,0.18)]">
-          <h1 className="text-2xl sm:text-5xl lg:text-[72px] font-black text-foreground tracking-wide [word-break:keep-all]">
+        <div className="bg-white inline-block px-4 sm:px-10 lg:px-14 py-2 sm:py-3 lg:py-4 mb-3 sm:mb-4 lg:mb-6 shadow-[0_10px_40px_rgba(0,0,0,0.18)]">
+          <h1 className="text-[28px] sm:text-5xl lg:text-[72px] font-black text-foreground tracking-normal sm:tracking-wide whitespace-nowrap [word-break:keep-all]">
             有限会社
             <span className="text-brand-500">たかはし</span>
             電器
@@ -258,22 +261,22 @@ function WorkplaceSection() {
   const points = [
     {
       n: "01",
-      title: "人を育てる、を一番に。",
+      title: "人を育てる",
       body: "未経験で入社しても、段階別のカリキュラムと先輩マンツーマン制度で着実にステップアップ。年間100時間以上の研修時間を確保しています。",
     },
     {
       n: "02",
-      title: "週休2日、残業を減らす仕組み。",
+      title: "完全週休2日制",
       body: "現場ごとの工程管理を徹底し、月平均残業時間は18時間以内。プライベートも大切にできる職場づくりを進めています。",
     },
     {
       n: "03",
-      title: "資格取得を会社が後押し。",
+      title: "資格取得を会社が後押し",
       body: "電気工事士・施工管理技士・低圧電気取扱業務など、業務に関わる資格は受講料・受験料を全額会社負担。合格お祝い金も支給。",
     },
     {
       n: "04",
-      title: "風通しのよい現場文化。",
+      title: "風通しのよい現場文化",
       body: "20代から60代まで幅広い世代が在籍。年次や立場に関係なく意見を出し合える雰囲気を大切にしています。",
     },
   ];
@@ -288,7 +291,7 @@ function WorkplaceSection() {
               jp={
                 <>
                   働きやすさは
-                  <span className="text-white underline decoration-white/70 decoration-[3px] underline-offset-[6px]">仕組み</span>
+                  <span className="inline-block bg-white text-brand-600 px-3 py-0.5 mx-1 align-middle shadow-[0_8px_24px_rgba(0,0,0,0.18)]">仕組み</span>
                   でつくる
                 </>
               }
@@ -338,7 +341,9 @@ function RecruitHighlight() {
               社員募集
               <br />
               <span className="text-white/90 text-xl lg:text-2xl">
-                経験者・未経験者ともに歓迎
+                経験者・未経験者
+                <br className="sm:hidden" />
+                ともに歓迎
               </span>
             </h3>
             <p className="text-sm leading-relaxed text-white/95 mb-10 relative">
@@ -414,6 +419,56 @@ function AreaSection() {
   );
 }
 
+const faqs = [
+  {
+    q: "対応エリアはどこまでですか？",
+    a: "東京都・埼玉県・千葉県を中心に、関東全域で施工を承っています。エリア外でも、規模や内容によって対応できる場合がありますので、まずはお気軽にお問い合わせください。",
+  },
+  {
+    q: "どのような工事に対応していますか？",
+    a: "電気工事（屋内外配線・照明・コンセントなど）、空調工事（業務用・家庭用エアコン、冷暖房、ダクト）、給排水・水道工事（給水給湯・排水・ガス配管・浄化槽）まで、設備工事を一貫して手がけています。",
+  },
+  {
+    q: "住宅の小規模な工事も依頼できますか？",
+    a: "はい。住宅から店舗・施設まで、規模を問わず対応しています。",
+  },
+  {
+    q: "問い合わせからどのくらいで返信がありますか？",
+    a: "お問い合わせフォームからのご連絡には、担当者より2営業日以内にご返信いたします。お急ぎの場合はお電話（03-3752-3570）でも承ります。",
+  },
+  {
+    q: "未経験でも採用に応募できますか？",
+    a: "はい。新卒・中途、経験者・未経験者を問わず募集しています。未経験から段階的に学べる研修制度を整えています。",
+  },
+];
+
+function FaqSection() {
+  return (
+    <section className="py-16 sm:py-24 lg:py-32 bg-muted">
+      <JsonLd data={faqSchema(faqs)} />
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="flex justify-center mb-12 lg:mb-16">
+          <SectionLabel en="FAQ" jp="よくあるご質問" align="center" />
+        </Reveal>
+        <dl className="border-y border-[color:var(--border)] divide-y divide-[color:var(--border)]">
+          {faqs.map((f) => (
+            <div key={f.q} className="py-6">
+              <dt className="flex gap-3 text-base lg:text-lg font-bold text-foreground">
+                <span className="text-brand-600 shrink-0">Q.</span>
+                <span>{f.q}</span>
+              </dt>
+              <dd className="mt-3 flex gap-3 text-sm leading-loose text-foreground/75">
+                <span className="text-brand-400 shrink-0 font-bold">A.</span>
+                <span>{f.a}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
+}
+
 function ContactCTA() {
   return (
     <section className="relative py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-brand-500 via-brand-700 to-brand-700 text-white overflow-hidden">
@@ -422,9 +477,9 @@ function ContactCTA() {
         <p className="section-label-en text-xs text-white/80 tracking-[0.3em] mb-6">
           CONTACT
         </p>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-[0.08em] leading-relaxed mb-8">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-normal sm:tracking-[0.08em] leading-relaxed mb-8">
           まずはお気軽に、
-          <br className="sm:hidden" />
+          <br />
           お問い合わせください。
         </h2>
         <p className="text-base text-white/85 max-w-2xl mx-auto mb-10">

@@ -2,11 +2,14 @@ import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { formatBlogDate, getBlogPosts } from "@/lib/microcms";
-import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: `ブログ | ${site.name}`,
-};
+export const metadata = pageMetadata({
+  title: "ブログ",
+  description:
+    "有限会社たかはし電器のブログ。設備工事や施工に関するお知らせ・お役立ち情報を発信します。",
+  path: "/blog",
+});
 
 export default async function BlogPage() {
   const posts = await getBlogPosts();

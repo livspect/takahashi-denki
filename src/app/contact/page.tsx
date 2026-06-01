@@ -1,10 +1,14 @@
 import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
 import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: `お問い合わせ | ${site.name}`,
-};
+export const metadata = pageMetadata({
+  title: "お問い合わせ",
+  description:
+    "施工のご依頼・お見積り、採用に関するご質問、協力会社のご相談など、お気軽にどうぞ。お電話（03-3752-3570）またはフォームから、2営業日以内にご返信いたします。",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

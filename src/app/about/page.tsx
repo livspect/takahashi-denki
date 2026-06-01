@@ -2,10 +2,14 @@ import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
 import { asset } from "@/lib/assets";
 import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: `会社概要 | ${site.name}`,
-};
+export const metadata = pageMetadata({
+  title: "会社概要",
+  description:
+    "有限会社たかはし電器の会社概要。ビジョン・社風・社会貢献活動、所在地（東京都大田区）や沿革についてご紹介します。",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

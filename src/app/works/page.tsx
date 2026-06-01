@@ -1,10 +1,13 @@
 import { PageHeader } from "@/components/PageHeader";
 import { WorksFilter } from "@/components/WorksFilter";
-import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: `施工事例 | ${site.name}`,
-};
+export const metadata = pageMetadata({
+  title: "施工事例",
+  description:
+    "住宅・店舗・施設まで、電気・空調・給排水の各分野で手がけた代表的な施工事例をご紹介します。",
+  path: "/works",
+});
 
 const works = [
   {

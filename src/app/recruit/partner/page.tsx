@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
-import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: `協力会社募集 | ${site.name}`,
-};
+export const metadata = pageMetadata({
+  title: "協力会社募集",
+  description:
+    "関東一円で、共に長期的に成長していける電気・空調・給排水工事の協力会社様を募集しています。継続案件・公正な単価・スピーディーな支払いをお約束します。",
+  path: "/recruit/partner",
+});
 
 export default function PartnerRecruitPage() {
   return (

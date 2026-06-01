@@ -50,5 +50,5 @@ next-env.d.ts
 # claude code local config
 /.claude/
 
-# this project uses npm (package-lock.json); ignore stray pnpm lockfile
-/pnpm-lock.yaml
+# this project uses pnpm (pnpm-lock.yaml); ignore stray npm lockfile
+/package-lock.json

@@ -11,7 +11,7 @@ import { organizationSchema, websiteSchema } from "@/lib/schema";
 const zenKaku = Zen_Kaku_Gothic_Antique({
   variable: "--font-zen-kaku",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
+  weight: ["400", "500", "700", "900"],
   display: "swap",
 });
 
@@ -51,14 +51,14 @@ export const metadata: Metadata = {
     description:
       "東京都大田区を拠点に、電気・空調・給排水の設備工事を一貫対応。関東全域で施工しています。",
     url: url("/"),
-    images: [{ url: url("/stock/hands.jpg"), alt: site.name }],
+    images: [{ url: url("/stock/hands.webp"), alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description:
       "東京都大田区を拠点に、電気・空調・給排水の設備工事を一貫対応。関東全域で施工しています。",
-    images: [url("/stock/hands.jpg")],
+    images: [url("/stock/hands.webp")],
   },
   robots: {
     index: true,

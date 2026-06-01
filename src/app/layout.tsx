@@ -11,7 +11,7 @@ import { organizationSchema, websiteSchema } from "@/lib/schema";
 const zenKaku = Zen_Kaku_Gothic_Antique({
   variable: "--font-zen-kaku",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  weight: ["400", "700", "900"],
   display: "swap",
   // CJK フォントは全サブセット(数百ファイル)を <head> で preload してしまい
   // 回線を占有し LCP を著しく悪化させる。preload を無効化し、

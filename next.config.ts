@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   basePath: isPages ? BASE_PATH : "",
   assetPrefix: isPages ? `${BASE_PATH}/` : "",
+  // NOTE: render-blocking CSS の解消は output:"export" では experimental.optimizeCss が
+  // 効かないため、ビルド後に scripts/inline-critical-css.mjs (beasties) で対応する。
 };
 
 export default nextConfig;

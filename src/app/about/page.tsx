@@ -25,9 +25,11 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20">
           <SectionLabel en="VISION" jp={"私たちの\nビジョン"} />
           <div className="space-y-6 text-base lg:text-lg leading-loose text-foreground/85">
+            <p className="text-xl lg:text-2xl font-bold text-foreground">
+              「電気・空調・給排水で、暮らしを支える」
+            </p>
             <p>
-              「電気・空調・給排水で、暮らしと現場を支える。」——
-              私たちは、自分たちの仕事が誰かの暮らしや事業を支えていることを誇りに、一つひとつの現場と向き合っています。
+              ー 私たちは、自分たちの仕事が誰かの暮らしや事業を支えていることを誇りに、一つひとつの現場と向き合っています。
             </p>
             <p>
               業界全体の高齢化、慢性的な人材不足。だからこそ、「働く人を大切にする会社」が次世代の設備工事業を担う、と私たちは信じています。

@@ -366,7 +366,7 @@ function RecruitHighlight() {
               協力会社募集
               <br />
               <span className="text-brand-300 text-xl lg:text-2xl">
-                共に成長できるパートナーへ
+                共に成長できるパートナー
               </span>
             </h3>
             <p className="text-sm leading-relaxed text-white/95 mb-10 relative">
@@ -432,10 +432,6 @@ const faqs = [
   {
     q: "住宅の小規模な工事も依頼できますか？",
     a: "はい。住宅から店舗・施設まで、規模を問わず対応しています。",
-  },
-  {
-    q: "問い合わせからどのくらいで返信がありますか？",
-    a: "お問い合わせフォームからのご連絡には、担当者より2営業日以内にご返信いたします。お急ぎの場合はお電話（03-3752-3570）でも承ります。",
   },
   {
     q: "未経験でも採用に応募できますか？",

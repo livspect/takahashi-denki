@@ -50,7 +50,7 @@ export default function BusinessPage() {
                   <p className="text-sm leading-relaxed text-foreground/75 mb-6">
                     {p.body}
                   </p>
-                  <ul className="mt-auto grid grid-cols-1 gap-1.5 text-sm text-foreground/80">
+                  <ul className="grid grid-cols-1 gap-1.5 text-sm text-foreground/80">
                     {p.items.map((item) => (
                       <li key={item} className="flex items-center gap-2">
                         <span className="text-brand-500 text-[10px]">▸</span>
@@ -80,7 +80,7 @@ export default function BusinessPage() {
               },
               {
                 n: "02",
-                title: "地域密着で、小回りの利く対応",
+                title: "地域密着で小回りの利く対応",
                 body: "大田区を中心に地域に根ざして営業しています。急なトラブルや小規模な工事にも、フットワークよくお応えします。",
               },
               {
@@ -96,7 +96,7 @@ export default function BusinessPage() {
             ].map((s) => (
               <article key={s.n} className="bg-white/15 border border-white/30 p-8 lg:p-10 backdrop-blur-sm shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
                 <p className="text-5xl font-black text-white/70 mb-4">{s.n}</p>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-black mb-4 leading-snug">{s.title}</h3>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-black mb-4 leading-snug [word-break:auto-phrase]">{s.title}</h3>
                 <p className="text-sm leading-relaxed text-white/95">
                   {s.body}
                 </p>

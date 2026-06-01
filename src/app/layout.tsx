@@ -13,6 +13,10 @@ const zenKaku = Zen_Kaku_Gothic_Antique({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
   display: "swap",
+  // CJK フォントは全サブセット(数百ファイル)を <head> で preload してしまい
+  // 回線を占有し LCP を著しく悪化させる。preload を無効化し、
+  // 必要なサブセットのみ font-display:swap で遅延読込にする。
+  preload: false,
 });
 
 const DEFAULT_TITLE =
@@ -51,14 +55,16 @@ export const metadata: Metadata = {
     description:
       "東京都大田区を拠点に、電気・空調・給排水の設備工事を一貫対応。関東全域で施工しています。",
     url: url("/"),
-    images: [{ url: url("/stock/hands.webp"), alt: site.name }],
+    images: [
+      { url: url("/og.jpg"), width: 1200, height: 630, type: "image/jpeg", alt: site.name },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description:
       "東京都大田区を拠点に、電気・空調・給排水の設備工事を一貫対応。関東全域で施工しています。",
-    images: [url("/stock/hands.webp")],
+    images: [url("/og.jpg")],
   },
   robots: {
     index: true,

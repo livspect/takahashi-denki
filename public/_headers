@@ -1,0 +1,8 @@
+# Cloudflare Workers Static Assets 用のカスタムヘッダー。
+# llms.txt は日本語(UTF-8)のため、charset 未指定だとブラウザが
+# エンコーディングを誤検出して文字化けする。明示的に UTF-8 を指定する。
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8

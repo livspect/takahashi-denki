@@ -1,0 +1,17 @@
+{
+  // Cloudflare Workers (Static Assets) でこのサイトを配信する設定。
+  // Next.js を `output: "export"` で静的書き出しした ./out をアセットとして配信する。
+  // Worker スクリプト(main)は持たない assets-only 構成。
+  //
+  // デプロイ: Cloudflare Workers Builds が git push 時に
+  //   ビルド: npm run build   （./out を生成）
+  //   デプロイ: npx wrangler deploy   （このファイルに従い ./out を配信）
+  // を実行する。
+  "name": "takahashi-denki",
+  "compatibility_date": "2026-05-30",
+  "assets": {
+    "directory": "./out",
+    // 未知のパスはトップレベルの 404.html を返す（Next export が生成）
+    "not_found_handling": "404-page"
+  }
+}

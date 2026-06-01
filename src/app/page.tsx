@@ -16,6 +16,8 @@ export default function HomePage() {
         rel="preload"
         as="image"
         href={asset("/stock/hands.webp")}
+        imageSrcSet={`${asset("/stock/hands-768.webp")} 768w, ${asset("/stock/hands-1024.webp")} 1024w, ${asset("/stock/hands.webp")} 1280w`}
+        imageSizes="100vw"
         fetchPriority="high"
       />
       <Hero />
@@ -38,6 +40,8 @@ function Hero() {
       <div className="absolute inset-0">
         <img
           src={asset("/stock/hands.webp")}
+          srcSet={`${asset("/stock/hands-768.webp")} 768w, ${asset("/stock/hands-1024.webp")} 1024w, ${asset("/stock/hands.webp")} 1280w`}
+          sizes="100vw"
           alt=""
           aria-hidden
           fetchPriority="high"
@@ -57,7 +61,9 @@ function Hero() {
           </h1>
         </div>
         <p className="text-sm sm:text-lg lg:text-2xl font-medium tracking-wide [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
-          東京都大田区を拠点に、暮らしと現場を支える設備工事会社
+          東京都大田区を拠点に、
+          <br className="sm:hidden" />
+          暮らしと現場を支える設備工事会社
         </p>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 text-white/85">

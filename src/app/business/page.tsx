@@ -141,7 +141,7 @@ export default function BusinessPage() {
             ].map((s, i, arr) => (
               <li key={s.n} className="flex gap-6 lg:gap-10 pb-10 last:pb-0">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-black text-sm">
+                  <div className="w-12 h-12 rounded-full bg-brand-700 text-white flex items-center justify-center font-black text-sm">
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   {i < arr.length - 1 && (

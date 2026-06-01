@@ -37,7 +37,7 @@ export function WorksFilter({ works, categories }: Props) {
               onClick={() => setActive(tag)}
               className={`px-5 py-2 text-sm font-bold border transition-colors ${
                 isActive
-                  ? "bg-brand-600 text-white border-brand-600"
+                  ? "bg-brand-700 text-white border-brand-600"
                   : "border-[color:var(--border)] hover:border-brand-600 hover:text-brand-700"
               }`}
             >

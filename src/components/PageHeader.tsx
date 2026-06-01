@@ -11,7 +11,7 @@ type Props = {
 
 export function PageHeader({ en, jp, description, breadcrumbs = [] }: Props) {
   return (
-    <section className="relative bg-brand-600 text-white overflow-hidden">
+    <section className="relative bg-brand-700 text-white overflow-hidden">
       {breadcrumbs.length > 0 && (
         <JsonLd data={breadcrumbSchema(breadcrumbs)} />
       )}

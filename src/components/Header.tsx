@@ -32,7 +32,7 @@ export function Header() {
           ))}
           <Link
             href="/contact"
-            className="ml-3 inline-flex items-center bg-brand-600 text-white px-6 py-2.5 text-sm font-bold tracking-wider hover:bg-brand-700 transition-colors"
+            className="ml-3 inline-flex items-center bg-brand-700 text-white px-6 py-2.5 text-sm font-bold tracking-wider hover:bg-brand-800 transition-colors"
           >
             お問い合わせ
           </Link>
@@ -79,7 +79,7 @@ export function Header() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-4 inline-flex justify-center items-center gap-2 bg-brand-600 text-white px-5 py-3 text-sm font-bold rounded-sm"
+              className="mt-4 inline-flex justify-center items-center gap-2 bg-brand-700 text-white px-5 py-3 text-sm font-bold rounded-sm"
             >
               お問い合わせ
               <span aria-hidden>→</span>

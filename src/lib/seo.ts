@@ -16,7 +16,8 @@ export function pageMetadata(opts: {
   const canonical = url(opts.path);
   // Next は子セグメントの openGraph / twitter を親とマージせず置換するため、
   // 各ページでも OG 画像を明示的に指定する。
-  const ogImage = url("/stock/hands.webp");
+  // SNS プレビューは webp 非対応のクローラ（LINE 等）があるため JPEG を使う。
+  const ogImage = url("/og.jpg");
   return {
     title: opts.title,
     description: opts.description,
@@ -27,7 +28,9 @@ export function pageMetadata(opts: {
       siteName: site.name,
       title: fullTitle,
       description: opts.description,
-      images: [{ url: ogImage, alt: site.name }],
+      images: [
+        { url: ogImage, width: 1200, height: 630, type: "image/jpeg", alt: site.name },
+      ],
     },
     twitter: {
       card: "summary_large_image",

@@ -34,7 +34,7 @@ export default async function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
           <div>
             <div className="flex flex-wrap gap-2 mb-10">
-              <span className="px-5 py-2 text-sm font-bold border bg-brand-600 text-white border-brand-600">
+              <span className="px-5 py-2 text-sm font-bold border bg-brand-700 text-white border-brand-600">
                 すべて
               </span>
               {categoryList.map(([c]) => (

@@ -106,7 +106,7 @@ export default function PartnerRecruitPage() {
             <div className="mt-10 flex justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 bg-brand-600 text-white px-8 py-4 font-bold text-sm hover:bg-brand-700 transition-colors"
+                className="inline-flex items-center gap-3 bg-brand-700 text-white px-8 py-4 font-bold text-sm hover:bg-brand-800 transition-colors"
               >
                 協力会社の登録をご相談する <span aria-hidden>→</span>
               </Link>

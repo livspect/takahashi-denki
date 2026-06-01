@@ -155,7 +155,7 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="w-full bg-brand-600 text-white py-4 font-black text-base hover:bg-brand-700 transition-colors"
+              className="w-full bg-brand-700 text-white py-4 font-black text-base hover:bg-brand-800 transition-colors"
             >
               送信する
             </button>
@@ -180,7 +180,7 @@ function Field({
       <span className="block text-sm font-bold mb-2">
         {label}
         {required && (
-          <span className="ml-2 text-[10px] bg-brand-600 text-white px-2 py-0.5 align-middle">
+          <span className="ml-2 text-[10px] bg-brand-700 text-white px-2 py-0.5 align-middle">
             必須
           </span>
         )}

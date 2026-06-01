@@ -291,6 +291,7 @@ function WorkplaceSection() {
               jp={
                 <>
                   働きやすさは
+                  <br className="sm:hidden" />
                   <span className="inline-block bg-white text-brand-600 px-3 py-0.5 mx-1 align-middle shadow-[0_8px_24px_rgba(0,0,0,0.18)]">仕組み</span>
                   でつくる
                 </>

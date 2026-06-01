@@ -61,7 +61,9 @@ function Hero() {
           </h1>
         </div>
         <p className="text-sm sm:text-lg lg:text-2xl font-medium tracking-wide [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
-          東京都大田区を拠点に、
+          東京都大田区を拠点に
+          {/* 読点はデスクトップのみ。モバイルは読点を消して改行 */}
+          <span className="hidden sm:inline">、</span>
           <br className="sm:hidden" />
           暮らしと現場を支える設備工事会社
         </p>

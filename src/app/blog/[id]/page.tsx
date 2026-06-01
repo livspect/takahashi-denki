@@ -7,6 +7,9 @@ import {
   getBlogPosts,
 } from "@/lib/microcms";
 import { site } from "@/lib/site";
+import { url } from "@/lib/config";
+import { JsonLd } from "@/components/JsonLd";
+import { blogPostingSchema } from "@/lib/schema";
 
 const PLACEHOLDER_ID = "preview";
 
@@ -23,8 +26,36 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { id } = await params;
   const post = await getBlogPost(id);
-  if (!post) return { title: `記事 | ${site.name}` };
-  return { title: `${post.title} | ${site.name}` };
+  if (!post) return { title: "記事" };
+
+  const canonical = url(`/blog/${post.id}`);
+  const description =
+    post.excerpt || `${site.name}のブログ記事「${post.title}」。`;
+  const images = post.thumbnail?.url
+    ? [post.thumbnail.url]
+    : [url("/stock/hands.jpg")];
+
+  return {
+    title: post.title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      url: canonical,
+      siteName: site.name,
+      title: `${post.title} | ${site.name}`,
+      description,
+      publishedTime: post.publishedAt,
+      modifiedTime: post.revisedAt || post.publishedAt,
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | ${site.name}`,
+      description,
+      images,
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -60,6 +91,16 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={blogPostingSchema({
+          id: post.id,
+          title: post.title,
+          excerpt: post.excerpt,
+          publishedAt: post.publishedAt,
+          revisedAt: post.revisedAt,
+          thumbnail: post.thumbnail,
+        })}
+      />
       <PageHeader
         en="BLOG"
         jp={post.title}

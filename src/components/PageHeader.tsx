@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 type Props = {
   en: string;
@@ -10,6 +12,9 @@ type Props = {
 export function PageHeader({ en, jp, description, breadcrumbs = [] }: Props) {
   return (
     <section className="relative bg-brand-600 text-white overflow-hidden">
+      {breadcrumbs.length > 0 && (
+        <JsonLd data={breadcrumbSchema(breadcrumbs)} />
+      )}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-500 via-brand-600 to-brand-700" />
       <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-brand-300/20 rounded-full blur-3xl" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">

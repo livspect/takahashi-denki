@@ -1,9 +1,13 @@
 import { PageHeader } from "@/components/PageHeader";
 import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: `プライバシーポリシー | ${site.name}`,
-};
+export const metadata = pageMetadata({
+  title: "プライバシーポリシー",
+  description:
+    "有限会社たかはし電器の個人情報の取り扱いに関する方針（プライバシーポリシー）です。",
+  path: "/privacy",
+});
 
 const sections = [
   {

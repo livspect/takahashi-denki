@@ -1,0 +1,37 @@
+# 有限会社たかはし電器 (TAKAHASHI DENKI)
+
+> 東京都大田区を拠点とする電気・空調・給排水の設備工事会社。住宅・店舗・施設の電気工事、冷暖房・空調工事、給排水・水道工事を一貫して請け負う。東京都・埼玉県・千葉県を中心に関東全域で施工。2008年4月創業。
+
+## 基本情報
+
+- 社名: 有限会社たかはし電器（TAKAHASHI DENKI）
+- 所在地: 〒146-0085 東京都大田区久が原2-14-1
+- 電話: 03-3752-3570
+- 創業: 2008年4月
+- 対応エリア: 東京都・埼玉県・千葉県を中心に関東全域
+- 対応規模: 住宅・店舗・施設（小規模から対応）
+
+## 事業内容
+
+- 電気工事: 住宅・店舗・施設の屋内外配線、照明・コンセント工事、ネオン設備、引込線、交通信号設備、避雷針、電気防食。
+- 空調工事: 業務用・家庭用エアコン設置、冷暖房設備、冷凍冷蔵設備、空調設備、ダクト工事。
+- 給排水・水道工事: 給水給湯設備、排水設備、ガス管配管、浄化槽工事。
+
+## 主要ページ
+
+- トップ: https://livspect.github.io/takahashi-denki/
+- 事業内容: https://livspect.github.io/takahashi-denki/business/
+- 施工事例: https://livspect.github.io/takahashi-denki/works/
+- 会社概要: https://livspect.github.io/takahashi-denki/about/
+- 採用情報: https://livspect.github.io/takahashi-denki/recruit/
+- 協力会社募集: https://livspect.github.io/takahashi-denki/recruit/partner/
+- ブログ: https://livspect.github.io/takahashi-denki/blog/
+- お問い合わせ: https://livspect.github.io/takahashi-denki/contact/
+
+## 採用
+
+新卒・中途、経験者・未経験者を問わず募集。未経験から段階的に学べる研修制度あり。協力会社（電気・空調・給排水工事）も募集中。
+
+## 問い合わせ
+
+施工のご依頼・お見積り、採用に関する質問はお問い合わせフォームまたは電話（03-3752-3570）から。フォームからの連絡には2営業日以内に返信。

@@ -2,11 +2,15 @@ import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { asset } from "@/lib/assets";
-import { businessPillars, serviceAreas, site } from "@/lib/site";
+import { businessPillars, serviceAreas } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: `事業内容 | ${site.name}`,
-};
+export const metadata = pageMetadata({
+  title: "事業内容",
+  description:
+    "電気工事・空調工事・給排水工事の3分野を軸に、住宅・店舗・施設の設備工事を一貫してお引き受けします。東京都・埼玉県・千葉県を中心に関東全域で対応。",
+  path: "/business",
+});
 
 export default function BusinessPage() {
   return (

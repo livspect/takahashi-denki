@@ -46,3 +46,9 @@ next-env.d.ts
 /*.png
 /*.jpeg
 /*.jpg
+
+# claude code local config
+/.claude/
+
+# this project uses npm (package-lock.json); ignore stray pnpm lockfile
+/pnpm-lock.yaml

@@ -2,11 +2,14 @@ import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
-import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: `採用情報 | ${site.name}`,
-};
+export const metadata = pageMetadata({
+  title: "採用情報",
+  description:
+    "新卒・中途、経験者・未経験者問わず募集中。未経験から段階的に学べる研修制度を整え、一緒に電気で社会を支えてくださる仲間を募集しています。",
+  path: "/recruit",
+});
 
 export default function RecruitPage() {
   return (

@@ -359,6 +359,7 @@ function WorkplaceSection() {
               jp={
                 <>
                   働きやすさは
+                  <br className="sm:hidden" />
                   <span className="inline-block bg-white text-brand-600 px-3 py-1 mx-1 leading-none align-middle relative -top-[0.18em] shadow-[0_8px_24px_rgba(0,0,0,0.18)]">仕組み</span>
                   でつくる
                 </>
@@ -433,7 +434,9 @@ function RecruitHighlight() {
               協力会社募集
               <br />
               <span className="text-brand-200 text-xl lg:text-2xl">
-                共に成長できるパートナーへ
+                共に成長できる
+                <br className="sm:hidden" />
+                パートナーへ
               </span>
             </h3>
             <p className="text-sm leading-relaxed text-white/95 mb-10 relative">
@@ -501,7 +504,7 @@ const faqs = [
     a: "はい。住宅から店舗・施設まで、規模を問わず対応しています。",
   },
   {
-    q: "問い合わせからどのくらいで返信がありますか？",
+    q: "返信までどのくらいかかりますか？",
     a: "お問い合わせフォームからのご連絡には、担当者より2営業日以内にご返信いたします。お急ぎの場合はお電話（03-3752-3570）でも承ります。",
   },
   {
@@ -556,14 +559,14 @@ function ContactCTA() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href={`tel:${site.phone.replace(/-/g, "")}`}
-            className="inline-flex items-center gap-3 bg-white text-brand-900 px-8 py-4 font-black text-lg hover:bg-brand-50 transition-colors"
+            className="inline-flex items-center justify-center gap-3 w-72 h-16 bg-white text-brand-900 font-black text-lg hover:bg-brand-50 transition-colors"
           >
             <span aria-hidden>☎</span>
             {site.phone}
           </a>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 border border-white px-8 py-4 font-bold text-sm hover:bg-white hover:text-brand-900 transition-colors"
+            className="inline-flex items-center justify-center gap-3 w-72 h-16 border border-white font-bold text-sm hover:bg-white hover:text-brand-900 transition-colors"
           >
             お問い合わせフォーム
           </Link>

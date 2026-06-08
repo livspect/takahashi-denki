@@ -44,38 +44,36 @@ export default function AboutPage() {
           <div className="mb-16">
             <SectionLabel en="CULTURE" jp={"社風・雰囲気"} />
           </div>
-          <div className="grid lg:grid-cols-3 gap-8">
+          {/* 実メンバー写真は2枚。縦長・横長が混在するため、同サイズの枠に
+              object-contain で全体を表示する */}
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
             {[
               {
                 title: "対話を大切にするチーム",
                 body: "立場に関わらず意見を言い合える、家族のような距離感のチームです。",
                 image: "/photos/members-group.webp",
                 alt: "有限会社たかはし電器のスタッフ集合写真",
-                pos: "object-center",
               },
               {
                 title: "若手とベテランの交流",
                 body: "ベテランの知見と若手の発想が掛け合わさり、現場運営にも良い循環が生まれています。",
                 image: "/photos/staff.webp",
                 alt: "現場対応する有限会社たかはし電器のスタッフ",
-                pos: "object-top",
-              },
-              {
-                title: "学びを奨励する文化",
-                body: "資格取得支援や日々の学びを通じて、誰もが自発的に成長できる環境を大切にしています。",
-                image: "/stock/workshop.webp",
-                alt: "作業の様子",
-                pos: "object-center",
               },
             ].map((c) => (
-              <article key={c.title} className="bg-white overflow-hidden">
-                <img
-                  src={asset(c.image)}
-                  alt={c.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className={`w-full aspect-video object-cover ${c.pos}`}
-                />
+              <article
+                key={c.title}
+                className="bg-white overflow-hidden border border-[color:var(--border)]"
+              >
+                <div className="aspect-[4/3] bg-[#eef1f4] flex items-center justify-center">
+                  <img
+                    src={asset(c.image)}
+                    alt={c.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
                 <div className="p-8 lg:p-10">
                   <h3 className="text-xl font-black mb-4">{c.title}</h3>
                   <p className="text-sm leading-relaxed text-foreground/75">
@@ -99,7 +97,7 @@ export default function AboutPage() {
               alt="有限会社たかはし電器の店舗外観（東京都大田区久が原・パナソニックの店）"
               loading="lazy"
               decoding="async"
-              className="w-full max-h-[440px] object-cover object-center"
+              className="w-full max-h-[480px] object-cover object-top"
             />
           </div>
           <dl className="grid gap-px bg-[color:var(--border)] border border-[color:var(--border)]">

@@ -120,7 +120,8 @@ for (const w of works) {
       "X-MICROCMS-API-KEY": apiKey,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(w),
+    // category はセレクトフィールドのため配列で送る。
+    body: JSON.stringify({ ...w, category: [w.category] }),
   });
   const body = await res.text();
   if (res.ok) {

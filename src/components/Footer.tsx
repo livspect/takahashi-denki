@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "@/lib/assets";
 import { navigation, site } from "@/lib/site";
 
 export function Footer() {
@@ -8,11 +9,20 @@ export function Footer() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid lg:grid-cols-[1.2fr_1fr_1fr] gap-12">
           <div>
-            <div className="mb-6">
-              <p className="text-[10px] tracking-[0.22em] font-bold text-brand-200 mb-1">
-                TAKAHASHI DENKI
-              </p>
-              <p className="text-lg font-bold tracking-wider">{site.name}</p>
+            <div className="mb-6 flex items-center gap-3">
+              <img
+                src={asset("/logo-white.webp")}
+                alt={`${site.name} ロゴ`}
+                width={176}
+                height={240}
+                className="h-12 w-auto shrink-0"
+              />
+              <div>
+                <p className="text-[10px] tracking-[0.22em] font-bold text-brand-200 mb-1">
+                  TAKAHASHI DENKI
+                </p>
+                <p className="text-lg font-bold tracking-wider">{site.name}</p>
+              </div>
             </div>
             <p className="text-sm text-brand-100/80 leading-relaxed mb-6">
               {site.description}

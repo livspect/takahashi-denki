@@ -80,4 +80,21 @@ async function icoFromSizes(sizes) {
 
 await writeFile(resolve(root, "src/app/favicon.ico"), await icoFromSizes([16, 32, 48]));
 
+// ---- 白ロゴ(フッター等の濃色背景用) ----
+// マーク形状のアルファチャンネルを取り出し、白で塗りつぶして透過PNGを作る。
+// (黒背景の白ロゴ画像をそのまま使うと黒矩形が残るため、形状だけを再利用する)
+const meta = await sharp(trimmed).metadata();
+const alpha = await sharp(trimmed).ensureAlpha().extractChannel("alpha").toBuffer();
+const whiteMark = await sharp({
+  create: { width: meta.width, height: meta.height, channels: 3, background: WHITE },
+})
+  .joinChannel(alpha)
+  .png()
+  .toBuffer();
+await sharp(whiteMark)
+  .resize({ height: 240, fit: "inside" })
+  .webp({ quality: 92 })
+  .toFile(resolve(root, "public/logo-white.webp"));
+console.log("generated: public/logo-white.webp");
+
 console.log("generated: icon.png / apple-icon.png / favicon.ico / public/logo.webp");

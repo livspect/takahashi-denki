@@ -48,25 +48,33 @@ export default function AboutPage() {
             {[
               {
                 title: "対話を大切にするチーム",
-                body: "週次のミーティング・現場朝礼・1on1を組み合わせて、立場に関わらず意見を言い合える環境を整えています。",
-                image: "/stock/team-blueprint.webp",
+                body: "立場に関わらず意見を言い合える、家族のような距離感のチームです。",
+                image: "/photos/members-group.webp",
+                alt: "有限会社たかはし電器のスタッフ集合写真",
+                pos: "object-center",
               },
               {
                 title: "若手とベテランの交流",
-                body: "20代から60代まで幅広い世代が在籍。ベテランの知見と若手の発想が掛け合わさり、現場運営にも良い循環が生まれています。",
-                image: "/stock/tools.webp",
+                body: "ベテランの知見と若手の発想が掛け合わさり、現場運営にも良い循環が生まれています。",
+                image: "/photos/staff.webp",
+                alt: "現場対応する有限会社たかはし電器のスタッフ",
+                pos: "object-top",
               },
               {
                 title: "学びを奨励する文化",
-                body: "外部研修・資格取得支援・社内勉強会を通じて、誰もが自発的に成長できる仕組みを用意しています。",
+                body: "資格取得支援や日々の学びを通じて、誰もが自発的に成長できる環境を大切にしています。",
                 image: "/stock/workshop.webp",
+                alt: "作業の様子",
+                pos: "object-center",
               },
             ].map((c) => (
               <article key={c.title} className="bg-white overflow-hidden">
                 <img
                   src={asset(c.image)}
-                  alt={c.title}
-                  className="w-full aspect-video object-cover"
+                  alt={c.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className={`w-full aspect-video object-cover ${c.pos}`}
                 />
                 <div className="p-8 lg:p-10">
                   <h3 className="text-xl font-black mb-4">{c.title}</h3>
@@ -82,16 +90,22 @@ export default function AboutPage() {
 
       <section className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
+          <div className="mb-10">
             <SectionLabel en="COMPANY PROFILE" jp="会社情報" />
+          </div>
+          <div className="mb-10 overflow-hidden border border-[color:var(--border)]">
+            <img
+              src={asset("/photos/storefront.webp")}
+              alt="有限会社たかはし電器の店舗外観（東京都大田区久が原・パナソニックの店）"
+              loading="lazy"
+              decoding="async"
+              className="w-full max-h-[440px] object-cover object-center"
+            />
           </div>
           <dl className="grid gap-px bg-[color:var(--border)] border border-[color:var(--border)]">
             {[
               ["社名", site.name],
-              ["代表者", "—"],
-              ["設立", site.established],
-              ["資本金", site.capital],
-              ["従業員数", site.employees],
+              ["代表者", "高橋 文雄・高橋 雄三"],
               [
                 "所在地",
                 `〒${site.address.zip} ${site.address.line1}`,
@@ -99,15 +113,19 @@ export default function AboutPage() {
               ["電話番号", site.phone],
               [
                 "事業内容",
-                "電気工事業／管工事業（空調・給排水）",
+                "住宅設備工事（電気・空調・給排水）／家電販売・オール電化（パナソニックの店）",
               ],
               [
                 "建設業許可",
-                "東京都知事許可（般-XX）第00000号",
+                "東京都知事許可（電気工事業・管工事業）第155319号",
               ],
               [
-                "取引銀行",
-                "りそな銀行／埼玉りそな銀行／みずほ銀行",
+                "登録電気工事業者",
+                "東京都知事登録 第242146号",
+              ],
+              [
+                "指定給水装置工事事業者",
+                "第8578号",
               ],
             ].map(([label, value]) => (
               <div

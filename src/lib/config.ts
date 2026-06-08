@@ -5,10 +5,12 @@
 // だけを書き換えれば、canonical・OpenGraph・サイトマップ・構造化データ・
 // 静的アセットの参照先がすべて追従します。
 //
-//   現在 (Cloudflare Workers, ルート配信):
-//     SITE_ORIGIN = "https://takahashi-denki.livspect.workers.dev"
+//   現在 (独自ドメイン, Cloudflare Workers ルート配信):
+//     SITE_ORIGIN = "https://taka-den.net"
 //     BASE_PATH   = ""
-//     → 公開 URL: https://takahashi-denki.livspect.workers.dev
+//     → 公開 URL: https://taka-den.net
+//     ※ Cloudflare 側で taka-den.net をこの Worker のカスタムドメインとして
+//       接続する必要がある（未接続だと canonical 先が解決しない）。
 //
 //   独自ドメインに移行する場合:
 //     SITE_ORIGIN = "https://www.example.co.jp"
@@ -21,7 +23,7 @@
 // =============================================================
 
 /** プロトコル + ホスト（末尾スラッシュなし） */
-export const SITE_ORIGIN = "https://takahashi-denki.livspect.workers.dev";
+export const SITE_ORIGIN = "https://taka-den.net";
 
 /**
  * 公開サブパス（先頭スラッシュあり・末尾なし）。ルート配信では "" にする。

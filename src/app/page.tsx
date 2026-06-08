@@ -313,7 +313,7 @@ function WorkplaceSection() {
               jp={
                 <>
                   働きやすさは
-                  <span className="inline-block bg-white text-brand-600 px-3 py-1 mx-1 leading-none align-middle relative -top-[0.08em] shadow-[0_8px_24px_rgba(0,0,0,0.18)]">仕組み</span>
+                  <span className="inline-block bg-white text-brand-600 px-3 py-1 mx-1 leading-none align-middle relative -top-[0.18em] shadow-[0_8px_24px_rgba(0,0,0,0.18)]">仕組み</span>
                   でつくる
                 </>
               }
@@ -500,9 +500,9 @@ function ContactCTA() {
           CONTACT
         </p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-normal sm:tracking-[0.08em] leading-relaxed mb-8">
-          まずはお気軽に、
+          まずはお気軽に
           <br />
-          お問い合わせください。
+          お問い合わせください
         </h2>
         <p className="text-base text-white/85 max-w-2xl mx-auto mb-10">
           施工のご相談、見積りのご依頼、採用に関するご質問など、どのようなことでも構いません。担当者より2営業日以内にご返信いたします。

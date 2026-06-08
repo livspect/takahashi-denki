@@ -44,36 +44,32 @@ export default function AboutPage() {
           <div className="mb-16">
             <SectionLabel en="CULTURE" jp={"社風・雰囲気"} />
           </div>
-          {/* 実メンバー写真は2枚。縦長・横長が混在するため、同サイズの枠に
-              object-contain で全体を表示する */}
-          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8">
             {[
               {
                 title: "対話を大切にするチーム",
-                body: "立場に関わらず意見を言い合える、家族のような距離感のチームです。",
-                image: "/photos/members-group.webp",
-                alt: "有限会社たかはし電器のスタッフ集合写真",
+                body: "週次のミーティング・現場朝礼・1on1を組み合わせて、立場に関わらず意見を言い合える環境を整えています。",
+                image: "/stock/team-blueprint.webp",
               },
               {
                 title: "若手とベテランの交流",
-                body: "ベテランの知見と若手の発想が掛け合わさり、現場運営にも良い循環が生まれています。",
-                image: "/photos/staff.webp",
-                alt: "現場対応する有限会社たかはし電器のスタッフ",
+                body: "20代から60代まで幅広い世代が在籍。ベテランの知見と若手の発想が掛け合わさり、現場運営にも良い循環が生まれています。",
+                image: "/stock/tools.webp",
+              },
+              {
+                title: "学びを奨励する文化",
+                body: "外部研修・資格取得支援・社内勉強会を通じて、誰もが自発的に成長できる仕組みを用意しています。",
+                image: "/stock/workshop.webp",
               },
             ].map((c) => (
-              <article
-                key={c.title}
-                className="bg-white overflow-hidden border border-[color:var(--border)]"
-              >
-                <div className="aspect-[4/3] bg-[#eef1f4] flex items-center justify-center">
-                  <img
-                    src={asset(c.image)}
-                    alt={c.alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
+              <article key={c.title} className="bg-white overflow-hidden">
+                <img
+                  src={asset(c.image)}
+                  alt={c.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-video object-cover"
+                />
                 <div className="p-8 lg:p-10">
                   <h3 className="text-xl font-black mb-4">{c.title}</h3>
                   <p className="text-sm leading-relaxed text-foreground/75">

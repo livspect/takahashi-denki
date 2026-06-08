@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { asset } from "@/lib/assets";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -38,7 +38,13 @@ export default function RecruitPage() {
                 </p>
               </div>
             </div>
-            <PlaceholderImage variant="blue" ratio="portrait" label="OUR FIELD" />
+            <img
+              src={asset("/photos/staff.webp")}
+              alt="現場で働く有限会社たかはし電器のスタッフ"
+              loading="lazy"
+              decoding="async"
+              className="w-full aspect-[3/4] object-cover"
+            />
           </div>
 
           <div id="career" className="mb-24">
@@ -205,7 +211,13 @@ export default function RecruitPage() {
               協力会社募集を見る <span aria-hidden>→</span>
             </Link>
           </div>
-          <PlaceholderImage variant="dark" label="PARTNER NETWORK" />
+          <img
+            src={asset("/photos/members-group.webp")}
+            alt="有限会社たかはし電器のスタッフ"
+            loading="lazy"
+            decoding="async"
+            className="w-full aspect-[4/3] object-cover"
+          />
         </div>
       </section>
     </>

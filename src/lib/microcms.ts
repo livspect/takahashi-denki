@@ -51,6 +51,34 @@ export async function getBlogPost(id: string): Promise<BlogPost | null> {
   }
 }
 
+// 施工事例（microCMS の "works" エンドポイント）。
+// エンドポイント未作成・env 無し・取得失敗時は [] を返し、呼び出し側でサンプルに
+// フォールバックする（デグレ防止）。
+export type WorkItem = {
+  id: string;
+  title: string;
+  category?: string; // 電気 / 空調 / 給排水 など
+  area?: string;
+  year?: string;
+  scale?: string;
+  summary?: string;
+  thumbnail?: { url: string; width?: number; height?: number };
+  publishedAt?: string;
+};
+
+export async function getWorks(limit = 100): Promise<WorkItem[]> {
+  if (!client) return [];
+  try {
+    const res = await client.get<MicroCMSListResponse<WorkItem>>({
+      endpoint: "works",
+      queries: { limit, orders: "-publishedAt" },
+    });
+    return res.contents;
+  } catch {
+    return [];
+  }
+}
+
 export function formatBlogDate(iso: string): string {
   const d = new Date(iso);
   const y = d.getFullYear();

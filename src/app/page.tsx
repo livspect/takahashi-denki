@@ -242,7 +242,7 @@ async function WorksPreview() {
         title: w.title,
         area: w.area ?? "",
         year: w.year ?? "",
-        image: w.thumbnail?.url ?? "/stock/electrical.webp",
+        image: w.thumbnail?.url ?? w.image ?? "/stock/electrical.webp",
       }))
     : FALLBACK_WORKS_PREVIEW;
   return (

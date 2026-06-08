@@ -62,8 +62,20 @@ export function blogExcerpt(html: string | undefined, max = 100): string {
   return text.length > max ? `${text.slice(0, max)}…` : text;
 }
 
-const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN;
-const apiKey = process.env.MICROCMS_API_KEY;
+// MICROCMS_SERVICE_DOMAIN に "https://xxxx.microcms.io/" のようなフルURLを
+// 入れてしまっても動くよう、サブドメイン部分だけに正規化する。
+function normalizeServiceDomain(v: string | undefined): string | undefined {
+  if (!v) return undefined;
+  const d = v
+    .trim()
+    .replace(/^https?:\/\//, "")
+    .replace(/\/.*$/, "")
+    .replace(/\.microcms\.io$/, "");
+  return d || undefined;
+}
+
+const serviceDomain = normalizeServiceDomain(process.env.MICROCMS_SERVICE_DOMAIN);
+const apiKey = process.env.MICROCMS_API_KEY?.trim();
 
 const client =
   serviceDomain && apiKey
@@ -72,11 +84,15 @@ const client =
 
 export async function getBlogPosts(limit = 100): Promise<BlogPost[]> {
   if (!client) return [];
-  const res = await client.get<MicroCMSListResponse<BlogPost>>({
-    endpoint: "blogs",
-    queries: { limit, orders: "-publishedAt" },
-  });
-  return res.contents;
+  try {
+    const res = await client.get<MicroCMSListResponse<BlogPost>>({
+      endpoint: "blogs",
+      queries: { limit, orders: "-publishedAt" },
+    });
+    return res.contents;
+  } catch {
+    return [];
+  }
 }
 
 export async function getBlogPost(id: string): Promise<BlogPost | null> {

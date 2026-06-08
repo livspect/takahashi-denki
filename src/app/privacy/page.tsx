@@ -140,7 +140,7 @@ export default function PrivacyPage() {
           </div>
 
           <p className="text-xs text-foreground/60 mt-16">
-            制定日：2024年4月1日
+            制定日：2026年6月1日
           </p>
         </div>
       </section>

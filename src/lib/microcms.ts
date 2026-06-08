@@ -23,6 +23,34 @@ export type BlogPost = {
   updatedAt: string;
 };
 
+// 募集要項（microCMS の "positions" エンドポイント）。
+// 未作成・env無し・取得失敗時は [] を返し、呼び出し側で現行のサンプルにフォールバック。
+export type PositionItem = {
+  id: string;
+  role: string; // 職種名
+  type?: string; // 雇用区分バッジ（例: 正社員）
+  salary?: string;
+  employmentType?: string; // 雇用形態（詳細）
+  location?: string;
+  hours?: string;
+  holidays?: string;
+  benefits?: string;
+  qualifications?: string;
+};
+
+export async function getPositions(limit = 100): Promise<PositionItem[]> {
+  if (!client) return [];
+  try {
+    const res = await client.get<MicroCMSListResponse<PositionItem>>({
+      endpoint: "positions",
+      queries: { limit },
+    });
+    return res.contents;
+  } catch {
+    return [];
+  }
+}
+
 /** リッチエディタ(HTML)本文からプレーンテキストの抜粋を生成する。 */
 export function blogExcerpt(html: string | undefined, max = 100): string {
   if (!html) return "";

@@ -87,7 +87,20 @@ export function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-xs text-brand-200/70">
-          <p>{site.copyright}</p>
+          <div className="flex flex-col gap-1">
+            <p>{site.copyright}</p>
+            <p className="text-[10px] text-brand-200/40">
+              Produced by{" "}
+              <a
+                href="https://www.livspect.com"
+                target="_blank"
+                rel="noopener"
+                className="hover:text-brand-200/80 transition-colors"
+              >
+                Livspect
+              </a>
+            </p>
+          </div>
           <ul className="flex gap-6">
             <li>
               <Link href="/privacy" className="hover:text-white">

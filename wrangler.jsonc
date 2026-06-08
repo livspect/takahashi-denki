@@ -9,9 +9,16 @@
   // を実行する。
   "name": "takahashi-denki",
   "compatibility_date": "2026-05-30",
+  // 独自ドメイン移行中も workers.dev のURLを残す（確認・フォールバック用）。
+  "workers_dev": true,
   "assets": {
     "directory": "./out",
     // 未知のパスはトップレベルの 404.html を返す（Next export が生成）
     "not_found_handling": "404-page"
-  }
+  },
+  // 独自ドメイン。custom_domain:true で DNS レコードと証明書を自動発行する。
+  // 前提: taka-den.net が当該 Cloudflare アカウントのゾーンであること（NS 委任済み）。
+  "routes": [
+    { "pattern": "taka-den.net", "custom_domain": true }
+  ]
 }

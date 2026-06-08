@@ -11,12 +11,13 @@ import { faqSchema } from "@/lib/schema";
 export default function HomePage() {
   return (
     <>
-      {/* LCP（ヒーロー画像）を最優先で取得させる */}
+      {/* LCP（ヒーロー画像）を最優先で取得させる。AVIF対応ブラウザは軽量なAVIFをプリロード */}
       <link
         rel="preload"
         as="image"
-        href={asset("/photos/storefront.webp")}
-        imageSrcSet={`${asset("/photos/storefront-768.webp")} 768w, ${asset("/photos/storefront-1024.webp")} 1024w, ${asset("/photos/storefront.webp")} 1280w`}
+        type="image/avif"
+        href={asset("/photos/storefront-1024.avif")}
+        imageSrcSet={`${asset("/photos/storefront-640.avif")} 640w, ${asset("/photos/storefront-768.avif")} 768w, ${asset("/photos/storefront-1024.avif")} 1024w, ${asset("/photos/storefront-1280.avif")} 1280w`}
         imageSizes="100vw"
         fetchPriority="high"
       />
@@ -38,15 +39,25 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pb-20 sm:pb-0">
       <div className="absolute inset-0">
-        <img
-          src={asset("/photos/storefront.webp")}
-          srcSet={`${asset("/photos/storefront-768.webp")} 768w, ${asset("/photos/storefront-1024.webp")} 1024w, ${asset("/photos/storefront.webp")} 1280w`}
-          sizes="100vw"
-          alt=""
-          aria-hidden
-          fetchPriority="high"
-          className="w-full h-full object-cover"
-        />
+        <picture>
+          <source
+            type="image/avif"
+            srcSet={`${asset("/photos/storefront-640.avif")} 640w, ${asset("/photos/storefront-768.avif")} 768w, ${asset("/photos/storefront-1024.avif")} 1024w, ${asset("/photos/storefront-1280.avif")} 1280w`}
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcSet={`${asset("/photos/storefront-640.webp")} 640w, ${asset("/photos/storefront-768.webp")} 768w, ${asset("/photos/storefront-1024.webp")} 1024w, ${asset("/photos/storefront.webp")} 1280w`}
+            sizes="100vw"
+          />
+          <img
+            src={asset("/photos/storefront-1024.webp")}
+            alt=""
+            aria-hidden
+            fetchPriority="high"
+            className="w-full h-full object-cover"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-brand-700/55 via-brand-600/55 to-brand-500/65" />
       </div>
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-12 text-center animate-fade-up">

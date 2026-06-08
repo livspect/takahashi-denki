@@ -99,9 +99,9 @@ export default async function RecruitPage() {
                 en="MESSAGE"
                 jp={
                   <>
-                    電気で
+                    誰かの毎日を
                     <br />
-                    誰かの毎日を支える仕事
+                    支える仕事
                   </>
                 }
               />

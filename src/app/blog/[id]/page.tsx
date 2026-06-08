@@ -2,6 +2,7 @@ import Link from "next/link";
 import DOMPurify from "isomorphic-dompurify";
 import { PageHeader } from "@/components/PageHeader";
 import {
+  blogExcerpt,
   formatBlogDate,
   getBlogPost,
   getBlogPosts,
@@ -30,9 +31,9 @@ export async function generateMetadata({ params }: Props) {
 
   const canonical = url(`/blog/${post.id}`);
   const description =
-    post.excerpt || `${site.name}のブログ記事「${post.title}」。`;
-  const images = post.thumbnail?.url
-    ? [post.thumbnail.url]
+    blogExcerpt(post.content) || `${site.name}のブログ記事「${post.title}」。`;
+  const images = post.eyecatch?.url
+    ? [post.eyecatch.url]
     : [url("/og.jpg")];
 
   return {
@@ -87,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
     );
   }
 
-  const safeBody = DOMPurify.sanitize(post.body);
+  const safeBody = DOMPurify.sanitize(post.content);
 
   return (
     <>
@@ -95,10 +96,10 @@ export default async function BlogPostPage({ params }: Props) {
         data={blogPostingSchema({
           id: post.id,
           title: post.title,
-          excerpt: post.excerpt,
+          excerpt: blogExcerpt(post.content),
           publishedAt: post.publishedAt,
           revisedAt: post.revisedAt,
-          thumbnail: post.thumbnail,
+          thumbnail: post.eyecatch,
         })}
       />
       <PageHeader
@@ -123,9 +124,9 @@ export default async function BlogPostPage({ params }: Props) {
             )}
           </div>
 
-          {post.thumbnail && (
+          {post.eyecatch && (
             <img
-              src={post.thumbnail.url}
+              src={post.eyecatch.url}
               alt={post.title}
               className="w-full aspect-video object-cover mb-10"
             />

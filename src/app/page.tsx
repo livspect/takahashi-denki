@@ -11,12 +11,21 @@ import { faqSchema } from "@/lib/schema";
 export default function HomePage() {
   return (
     <>
-      {/* LCP（ヒーロー画像）を最優先で取得させる。AVIF対応ブラウザは軽量なAVIFをプリロード */}
+      {/* LCP（ヒーロー画像）を最優先で先読み。モバイルは縦長クロップ、デスクトップは横長を media で出し分け */}
       <link
         rel="preload"
         as="image"
         type="image/avif"
-        href={asset("/photos/storefront-1024.avif")}
+        media="(max-width: 639px)"
+        imageSrcSet={`${asset("/photos/storefront-m-414.avif")} 414w, ${asset("/photos/storefront-m-512.avif")} 512w, ${asset("/photos/storefront-m-638.avif")} 638w`}
+        imageSizes="100vw"
+        fetchPriority="high"
+      />
+      <link
+        rel="preload"
+        as="image"
+        type="image/avif"
+        media="(min-width: 640px)"
         imageSrcSet={`${asset("/photos/storefront-640.avif")} 640w, ${asset("/photos/storefront-768.avif")} 768w, ${asset("/photos/storefront-1024.avif")} 1024w, ${asset("/photos/storefront-1280.avif")} 1280w`}
         imageSizes="100vw"
         fetchPriority="high"
@@ -40,12 +49,28 @@ function Hero() {
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pb-20 sm:pb-0">
       <div className="absolute inset-0">
         <picture>
+          {/* モバイル: 看板中心の縦長クロップ（横長を object-cover した際の左右の無駄を排除） */}
           <source
+            media="(max-width: 639px)"
+            type="image/avif"
+            srcSet={`${asset("/photos/storefront-m-414.avif")} 414w, ${asset("/photos/storefront-m-512.avif")} 512w, ${asset("/photos/storefront-m-638.avif")} 638w`}
+            sizes="100vw"
+          />
+          <source
+            media="(max-width: 639px)"
+            type="image/webp"
+            srcSet={`${asset("/photos/storefront-m-414.webp")} 414w, ${asset("/photos/storefront-m-512.webp")} 512w, ${asset("/photos/storefront-m-638.webp")} 638w`}
+            sizes="100vw"
+          />
+          {/* デスクトップ/タブレット: 横長 */}
+          <source
+            media="(min-width: 640px)"
             type="image/avif"
             srcSet={`${asset("/photos/storefront-640.avif")} 640w, ${asset("/photos/storefront-768.avif")} 768w, ${asset("/photos/storefront-1024.avif")} 1024w, ${asset("/photos/storefront-1280.avif")} 1280w`}
             sizes="100vw"
           />
           <source
+            media="(min-width: 640px)"
             type="image/webp"
             srcSet={`${asset("/photos/storefront-640.webp")} 640w, ${asset("/photos/storefront-768.webp")} 768w, ${asset("/photos/storefront-1024.webp")} 1024w, ${asset("/photos/storefront.webp")} 1280w`}
             sizes="100vw"

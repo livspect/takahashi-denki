@@ -42,10 +42,10 @@ const WHITE = { r: 255, g: 255, b: 255, alpha: 1 };
 await writeFile(resolve(root, "src/app/icon.png"), await square(512, 0.06, TRANSPARENT));
 // apple-icon (白背景・iOSの角丸を考慮して余白多め)
 await writeFile(resolve(root, "src/app/apple-icon.png"), await square(180, 0.12, WHITE));
-// ヘッダー用ロゴ(高さ240・透過・トリミングのみ)
+// ヘッダー用ロゴ(高さ160・透過。表示は最大h-11=44px・DPR3でも132px相当のため160で十分)
 await sharp(trimmed)
-  .resize({ height: 240, fit: "inside" })
-  .webp({ quality: 92 })
+  .resize({ height: 160, fit: "inside" })
+  .webp({ quality: 88 })
   .toFile(resolve(root, "public/logo.webp"));
 
 // ---- favicon.ico (PNG内包) ----
@@ -92,8 +92,8 @@ const whiteMark = await sharp({
   .png()
   .toBuffer();
 await sharp(whiteMark)
-  .resize({ height: 240, fit: "inside" })
-  .webp({ quality: 92 })
+  .resize({ height: 160, fit: "inside" })
+  .webp({ quality: 88 })
   .toFile(resolve(root, "public/logo-white.webp"));
 console.log("generated: public/logo-white.webp");
 

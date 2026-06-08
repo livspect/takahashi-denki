@@ -1,21 +1,27 @@
 {
-  // Cloudflare Workers (Static Assets) でこのサイトを配信する設定。
-  // Next.js を `output: "export"` で静的書き出しした ./out をアセットとして配信する。
-  // Worker スクリプト(main)は持たない assets-only 構成。
+  // Cloudflare Workers でこのサイトを配信する設定。
+  // - 静的ページ: Next.js を `output: "export"` で書き出した ./out をアセット配信。
+  // - 動的: /api/contact のみ Worker(main) が処理し、フォーム内容をメール送信する。
   //
   // デプロイ: Cloudflare Workers Builds が git push 時に
-  //   ビルド: npm run build   （./out を生成）
-  //   デプロイ: npx wrangler deploy   （このファイルに従い ./out を配信）
+  //   ビルド: pnpm run build   （./out を生成 + クリティカルCSSインライン化）
+  //   デプロイ: npx wrangler deploy   （worker と ./out を配信）
   // を実行する。
   "name": "takahashi-denki",
   "compatibility_date": "2026-05-30",
+  "main": "worker/index.ts",
   // 独自ドメイン移行中も workers.dev のURLを残す（確認・フォールバック用）。
   "workers_dev": true,
   "assets": {
     "directory": "./out",
+    "binding": "ASSETS",
     // 未知のパスはトップレベルの 404.html を返す（Next export が生成）
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    // /api/* は静的アセットより先に Worker で処理する（それ以外は従来どおり静的配信）。
+    "run_worker_first": ["/api/*"]
   },
+  // Email Sending バインディング。taka-den.net は Email Sending 有効済み。
+  "send_email": [{ "name": "EMAIL" }],
   // 独自ドメイン。custom_domain:true で DNS レコードと証明書を自動発行する。
   // 前提: taka-den.net が当該 Cloudflare アカウントのゾーンであること（NS 委任済み）。
   "routes": [

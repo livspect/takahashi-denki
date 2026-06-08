@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
+import { ContactForm } from "@/components/ContactForm";
 import { site } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
@@ -67,125 +68,15 @@ export default function ContactPage() {
                   ACCESS
                 </p>
                 <p className="text-sm leading-relaxed text-foreground/80">
-                  東武スカイツリーライン「春日部駅」西口より徒歩約12分／お車の場合は近隣コインパーキングをご利用ください。
+                  東急池上線「久が原駅」周辺。お車の場合は近隣のコインパーキングをご利用ください。
                 </p>
               </div>
             </div>
           </div>
 
-          <form className="bg-muted p-8 lg:p-12 space-y-6">
-            <div>
-              <h2 className="text-2xl font-black mb-2">
-                お問い合わせフォーム
-              </h2>
-              <p className="text-sm text-foreground/70">
-                必須項目をご記入の上、ご送信ください。担当者より2営業日以内にご返信いたします。
-              </p>
-            </div>
-
-            <Field label="お問い合わせ種別" required>
-              <select className="w-full p-3 border border-[color:var(--border)] bg-white text-sm">
-                <option>施工のご依頼・お見積り</option>
-                <option>採用について</option>
-                <option>協力会社のご相談</option>
-                <option>取材・メディア</option>
-                <option>その他</option>
-              </select>
-            </Field>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              <Field label="お名前" required>
-                <input
-                  type="text"
-                  placeholder="山田 太郎"
-                  className="w-full p-3 border border-[color:var(--border)] bg-white text-sm"
-                />
-              </Field>
-              <Field label="フリガナ" required>
-                <input
-                  type="text"
-                  placeholder="ヤマダ タロウ"
-                  className="w-full p-3 border border-[color:var(--border)] bg-white text-sm"
-                />
-              </Field>
-            </div>
-
-            <Field label="会社名・所属">
-              <input
-                type="text"
-                placeholder="株式会社サンプル"
-                className="w-full p-3 border border-[color:var(--border)] bg-white text-sm"
-              />
-            </Field>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              <Field label="メールアドレス" required>
-                <input
-                  type="email"
-                  placeholder="sample@example.com"
-                  className="w-full p-3 border border-[color:var(--border)] bg-white text-sm"
-                />
-              </Field>
-              <Field label="電話番号" required>
-                <input
-                  type="tel"
-                  placeholder="03-0000-0000"
-                  className="w-full p-3 border border-[color:var(--border)] bg-white text-sm"
-                />
-              </Field>
-            </div>
-
-            <Field label="お問い合わせ内容" required>
-              <textarea
-                rows={8}
-                placeholder="ご相談内容をご記入ください。"
-                className="w-full p-3 border border-[color:var(--border)] bg-white text-sm"
-              />
-            </Field>
-
-            <label className="flex items-start gap-3 text-sm">
-              <input type="checkbox" className="mt-1" />
-              <span>
-                <a href="/privacy" className="text-brand-700 underline">
-                  プライバシーポリシー
-                </a>
-                に同意して送信します。
-              </span>
-            </label>
-
-            <button
-              type="submit"
-              className="w-full bg-brand-700 text-white py-4 font-black text-base hover:bg-brand-800 transition-colors"
-            >
-              送信する
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
     </>
-  );
-}
-
-function Field({
-  label,
-  required,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="block">
-      <span className="block text-sm font-bold mb-2">
-        {label}
-        {required && (
-          <span className="ml-2 text-[10px] bg-brand-700 text-white px-2 py-0.5 align-middle">
-            必須
-          </span>
-        )}
-      </span>
-      {children}
-    </label>
   );
 }

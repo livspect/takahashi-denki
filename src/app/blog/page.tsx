@@ -27,6 +27,7 @@ export default async function BlogPage() {
         en="BLOG"
         jp="現場ブログ"
         description="現場の様子・お知らせ・採用情報・技術ノートなど、有限会社たかはし電器の今をお届けします。"
+        image="/stock/ductwork.webp"
         breadcrumbs={[{ label: "ブログ" }]}
       />
 

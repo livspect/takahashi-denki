@@ -18,6 +18,8 @@ export default function AboutPage() {
         en="ABOUT US"
         jp="会社概要"
         description="東京都大田区を拠点に地域とともに歩む有限会社たかはし電器の、ビジョン・社風・社会貢献活動についてご紹介します。"
+        image="/photos/storefront.webp"
+        imagePosition="object-top"
         breadcrumbs={[{ label: "会社概要" }]}
       />
 

@@ -17,6 +17,7 @@ export default function PartnerRecruitPage() {
         en="PARTNER RECRUIT"
         jp="協力会社募集"
         description="関東一円で、共に長期的に成長していける電気工事業の協力会社様を募集しています。"
+        image="/stock/tools.webp"
         breadcrumbs={[
           { label: "採用情報", href: "/recruit" },
           { label: "協力会社募集" },

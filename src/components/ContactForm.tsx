@@ -1,12 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const sentRef = useRef<HTMLDivElement>(null);
+
+  // 送信完了時は、フォーム下部から完了メッセージが見える位置へスクロールする。
+  useEffect(() => {
+    if (status === "sent") {
+      sentRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [status]);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -43,7 +51,10 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="bg-muted p-8 lg:p-12 flex flex-col items-center text-center min-h-[480px] justify-center">
+      <div
+        ref={sentRef}
+        className="bg-muted p-8 lg:p-12 flex flex-col items-center text-center min-h-[480px] justify-center scroll-mt-28"
+      >
         <div className="w-14 h-14 rounded-full bg-brand-700 text-white flex items-center justify-center text-2xl mb-6">
           ✓
         </div>

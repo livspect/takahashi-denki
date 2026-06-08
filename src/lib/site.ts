@@ -10,7 +10,7 @@ export const site = {
     line2: "",
   },
   phone: "03-3752-3570",
-  email: "info@example.jp",
+  email: "contact@taka-den.net",
   established: "2008年4月",
   capital: "1,000万円",
   employees: "32名（2025年4月現在）",

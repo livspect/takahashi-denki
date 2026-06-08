@@ -17,6 +17,7 @@ export function Header() {
             alt={`${site.name} ロゴ`}
             width={176}
             height={240}
+            fetchPriority="low"
             className="h-9 lg:h-11 w-auto shrink-0"
           />
           <span className="flex flex-col leading-tight">

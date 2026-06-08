@@ -17,10 +17,11 @@ const WIDTHS = [640, 768, 1024, 1280];
 
 for (const w of WIDTHS) {
   const base = sharp(SRC).resize({ width: w, withoutEnlargement: true });
-  // AVIF（高圧縮。q50・effort4 で見た目を保ちつつ webp より小さく）
+  // AVIF（高圧縮。Heroは55-65%の青オーバーレイ下で実写真の3-4割しか見えないため、
+  // q42・effort6 まで攻めても劣化はほぼ不可視。LCPリソースを軽量化する）
   await base
     .clone()
-    .avif({ quality: 50, effort: 4 })
+    .avif({ quality: 42, effort: 6 })
     .toFile(resolve(photos, `storefront-${w}.avif`));
   // WebP は 640 のみ新規追加（768/1024/1280 は既存を維持して二重圧縮を避ける）
   if (w === 640) {

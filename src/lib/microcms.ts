@@ -62,7 +62,9 @@ export type WorkItem = {
   year?: string;
   scale?: string;
   summary?: string;
+  // 実写真は thumbnail(microCMS画像フィールド)、暫定/ダミーは image(テキストでパスやURL)を使う。
   thumbnail?: { url: string; width?: number; height?: number };
+  image?: string;
   publishedAt?: string;
 };
 

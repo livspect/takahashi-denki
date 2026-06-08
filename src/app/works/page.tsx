@@ -95,7 +95,7 @@ export default async function WorksPage() {
         area: w.area ?? "",
         year: w.year ?? "",
         scale: w.scale ?? "",
-        image: w.thumbnail?.url ?? "/stock/electrical.webp",
+        image: w.thumbnail?.url ?? w.image ?? "/stock/electrical.webp",
         summary: w.summary ?? "",
       }))
     : FALLBACK_WORKS;

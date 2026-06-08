@@ -8,6 +8,7 @@ export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   const sentRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   // 送信完了時は、フォーム下部から完了メッセージが見える位置へスクロールする。
   useEffect(() => {
@@ -15,6 +16,32 @@ export function ContactForm() {
       sentRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, [status]);
+
+  // 採用ページの「この職種に応募する」等から ?type=...&role=... で来た場合、
+  // お問い合わせ種別と本文をプリフィルし、フォームへスクロールする。
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form) return;
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+    const role = params.get("role");
+
+    if (type) {
+      const sel = form.elements.namedItem("type") as HTMLSelectElement | null;
+      if (sel && Array.from(sel.options).some((o) => o.value === type)) {
+        sel.value = type;
+      }
+    }
+    if (role) {
+      const msg = form.elements.namedItem("message") as HTMLTextAreaElement | null;
+      if (msg && !msg.value) {
+        msg.value = `「${role}」の求人について応募・お問い合わせします。\n\n`;
+      }
+    }
+    if (type || role) {
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -79,7 +106,11 @@ export function ContactForm() {
     "w-full p-3 border border-[color:var(--border)] bg-white text-sm";
 
   return (
-    <form onSubmit={onSubmit} className="bg-muted p-8 lg:p-12 space-y-6">
+    <form
+      ref={formRef}
+      onSubmit={onSubmit}
+      className="bg-muted p-8 lg:p-12 space-y-6 scroll-mt-24"
+    >
       <div>
         <h2 className="text-2xl font-black mb-2">お問い合わせフォーム</h2>
         <p className="text-sm text-foreground/70">

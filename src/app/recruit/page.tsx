@@ -215,7 +215,7 @@ export default async function RecruitPage() {
                 </dl>
                 <div className="bg-white p-6 lg:p-8 flex justify-end">
                   <Link
-                    href="/contact"
+                    href={`/contact?type=${encodeURIComponent("採用について")}&role=${encodeURIComponent(p.role)}`}
                     className="inline-flex items-center gap-2 bg-brand-700 text-white px-6 py-3 font-bold text-sm hover:bg-brand-800 transition-colors"
                   >
                     この職種に応募する <span aria-hidden>→</span>

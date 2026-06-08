@@ -9,18 +9,30 @@ export type BlogCategory = {
   revisedAt?: string;
 };
 
+// microCMS の標準ブログテンプレに合わせる: 本文は content(リッチエディタ)、
+// アイキャッチ画像は eyecatch。抜粋(excerpt)フィールドは無いので content から自動生成する。
 export type BlogPost = {
   id: string;
   title: string;
   category?: BlogCategory;
-  thumbnail?: { url: string; width: number; height: number };
-  excerpt?: string;
-  body: string;
+  eyecatch?: { url: string; width: number; height: number };
+  content: string;
   publishedAt: string;
   revisedAt: string;
   createdAt: string;
   updatedAt: string;
 };
+
+/** リッチエディタ(HTML)本文からプレーンテキストの抜粋を生成する。 */
+export function blogExcerpt(html: string | undefined, max = 100): string {
+  if (!html) return "";
+  const text = html
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text.length > max ? `${text.slice(0, max)}…` : text;
+}
 
 const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN;
 const apiKey = process.env.MICROCMS_API_KEY;

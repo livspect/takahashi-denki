@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
-import { formatBlogDate, getBlogPosts } from "@/lib/microcms";
+import { blogExcerpt, formatBlogDate, getBlogPosts } from "@/lib/microcms";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -61,10 +61,12 @@ export default async function BlogPage() {
                     href={`/blog/${p.id}`}
                     className="group bg-white border border-[color:var(--border)] hover:border-brand-500 transition-colors"
                   >
-                    {p.thumbnail ? (
+                    {p.eyecatch ? (
                       <img
-                        src={p.thumbnail.url}
+                        src={p.eyecatch.url}
                         alt={p.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full aspect-video object-cover"
                       />
                     ) : (
@@ -89,9 +91,9 @@ export default async function BlogPage() {
                       <h3 className="font-bold leading-snug mb-3 group-hover:text-brand-600 transition-colors">
                         {p.title}
                       </h3>
-                      {p.excerpt && (
+                      {blogExcerpt(p.content) && (
                         <p className="text-sm text-foreground/70 leading-relaxed line-clamp-3">
-                          {p.excerpt}
+                          {blogExcerpt(p.content)}
                         </p>
                       )}
                     </div>

@@ -3,7 +3,7 @@ import { SectionLabel } from "@/components/SectionLabel";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { Reveal } from "@/components/Reveal";
 import { asset } from "@/lib/assets";
-import { formatBlogDate, getBlogPosts, getWorks } from "@/lib/microcms";
+import { blogExcerpt, formatBlogDate, getBlogPosts, getWorks } from "@/lib/microcms";
 import { businessPillars, serviceAreas, site } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { faqSchema } from "@/lib/schema";
@@ -176,9 +176,9 @@ async function BlogPreview() {
                   href={`/blog/${p.id}`}
                   className="group bg-white border border-[color:var(--border)] hover:border-brand-500 transition-colors h-full block"
                 >
-                  {p.thumbnail ? (
+                  {p.eyecatch ? (
                     <img
-                      src={p.thumbnail.url}
+                      src={p.eyecatch.url}
                       alt={p.title}
                       loading="lazy"
                       decoding="async"
@@ -204,9 +204,9 @@ async function BlogPreview() {
                     <h3 className="font-bold leading-relaxed tracking-wide mb-3 group-hover:text-brand-600 transition-colors">
                       {p.title}
                     </h3>
-                    {p.excerpt && (
+                    {blogExcerpt(p.content) && (
                       <p className="text-sm text-foreground/70 leading-loose line-clamp-3">
-                        {p.excerpt}
+                        {blogExcerpt(p.content)}
                       </p>
                     )}
                   </div>

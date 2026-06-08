@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { WorksFilter } from "@/components/WorksFilter";
+import { getWorks } from "@/lib/microcms";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -9,7 +10,8 @@ export const metadata = pageMetadata({
   path: "/works",
 });
 
-const works = [
+// microCMS の works が未投入/取得不可のときに表示するサンプル（デグレ防止）。
+const FALLBACK_WORKS = [
   {
     title: "店舗 照明・配線設備工事",
     cat: "電気",
@@ -84,7 +86,20 @@ const works = [
   },
 ];
 
-export default function WorksPage() {
+export default async function WorksPage() {
+  const cms = await getWorks();
+  const works = cms.length
+    ? cms.map((w) => ({
+        title: w.title,
+        cat: w.category ?? "その他",
+        area: w.area ?? "",
+        year: w.year ?? "",
+        scale: w.scale ?? "",
+        image: w.thumbnail?.url ?? "/stock/electrical.webp",
+        summary: w.summary ?? "",
+      }))
+    : FALLBACK_WORKS;
+
   return (
     <>
       <PageHeader

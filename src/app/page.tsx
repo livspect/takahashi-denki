@@ -3,7 +3,7 @@ import { SectionLabel } from "@/components/SectionLabel";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { Reveal } from "@/components/Reveal";
 import { asset } from "@/lib/assets";
-import { formatBlogDate, getBlogPosts } from "@/lib/microcms";
+import { formatBlogDate, getBlogPosts, getWorks } from "@/lib/microcms";
 import { businessPillars, serviceAreas, site } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { faqSchema } from "@/lib/schema";
@@ -228,13 +228,23 @@ async function BlogPreview() {
   );
 }
 
-function WorksPreview() {
-  const works = [
-    { title: "店舗 照明・配線設備工事", area: "東京都大田区", year: "2025", image: "/stock/lighting.webp" },
-    { title: "業務用エアコン入替工事", area: "東京都品川区", year: "2025", image: "/stock/ac.webp" },
-    { title: "給湯・給水設備の改修工事", area: "東京都大田区", year: "2024", image: "/stock/plumbing.webp" },
-    { title: "住宅 コンセント増設・電気工事", area: "東京都目黒区", year: "2024", image: "/stock/electrical.webp" },
-  ];
+const FALLBACK_WORKS_PREVIEW = [
+  { title: "店舗 照明・配線設備工事", area: "東京都大田区", year: "2025", image: "/stock/lighting.webp" },
+  { title: "業務用エアコン入替工事", area: "東京都品川区", year: "2025", image: "/stock/ac.webp" },
+  { title: "給湯・給水設備の改修工事", area: "東京都大田区", year: "2024", image: "/stock/plumbing.webp" },
+  { title: "住宅 コンセント増設・電気工事", area: "東京都目黒区", year: "2024", image: "/stock/electrical.webp" },
+];
+
+async function WorksPreview() {
+  const cms = await getWorks(4);
+  const works = cms.length
+    ? cms.slice(0, 4).map((w) => ({
+        title: w.title,
+        area: w.area ?? "",
+        year: w.year ?? "",
+        image: w.thumbnail?.url ?? "/stock/electrical.webp",
+      }))
+    : FALLBACK_WORKS_PREVIEW;
   return (
     <section className="py-16 sm:py-28 lg:py-40 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { asset } from "@/lib/assets";
 import { navigation, site } from "@/lib/site";
 
 export function Header() {
@@ -10,12 +11,21 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[color:var(--border)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
-        <Link href="/" className="flex flex-col leading-tight group">
-          <span className="text-[10px] tracking-[0.22em] text-brand-700 font-bold">
-            TAKAHASHI DENKI
-          </span>
-          <span className="text-sm lg:text-base font-bold text-foreground tracking-wider">
-            {site.name}
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <img
+            src={asset("/logo.webp")}
+            alt={`${site.name} ロゴ`}
+            width={176}
+            height={240}
+            className="h-9 lg:h-11 w-auto shrink-0"
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="text-[10px] tracking-[0.22em] text-brand-700 font-bold">
+              TAKAHASHI DENKI
+            </span>
+            <span className="text-sm lg:text-base font-bold text-foreground tracking-wider">
+              {site.name}
+            </span>
           </span>
         </Link>
 

@@ -25,7 +25,7 @@ export default function AboutPage() {
 
       <section id="vision" className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20">
-          <SectionLabel en="VISION" jp={"私たちの\nビジョン"} />
+          <SectionLabel en="VISION" jp="私たちのビジョン" />
           <div className="space-y-6 text-base lg:text-lg leading-loose text-foreground/85">
             <p>
               「電気・空調・給排水で、暮らしと現場を支える。」——

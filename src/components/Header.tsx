@@ -11,7 +11,11 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[color:var(--border)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-2.5 group">
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          className="flex items-center gap-2.5 group"
+        >
           <img
             src={asset("/logo.webp")}
             alt={`${site.name} ロゴ`}

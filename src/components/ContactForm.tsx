@@ -160,7 +160,7 @@ export function ContactForm() {
           <a href="/privacy" className="text-brand-700 underline">
             プライバシーポリシー
           </a>
-          に同意して送信します。
+          に同意します。
         </span>
       </label>
 

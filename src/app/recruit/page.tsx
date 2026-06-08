@@ -18,6 +18,7 @@ export default function RecruitPage() {
         en="RECRUIT"
         jp="採用情報"
         description="新卒・中途、経験者・未経験者問わず。一緒に電気で社会を支えてくださる仲間を募集しています。"
+        image="/photos/members-group.webp"
         breadcrumbs={[{ label: "採用情報" }]}
       />
 

@@ -19,6 +19,7 @@ export default function BusinessPage() {
         en="BUSINESS"
         jp="事業内容"
         description="電気工事・空調工事・給排水工事の3分野を軸に、住宅・店舗・施設の設備工事を一貫してお引き受けします。"
+        image="/stock/electrical.webp"
         breadcrumbs={[{ label: "事業内容" }]}
       />
 

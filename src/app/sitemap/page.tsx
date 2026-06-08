@@ -22,6 +22,7 @@ export default function SiteMapPage() {
         en="SITEMAP"
         jp="サイトマップ"
         description="サイト内の全ページ一覧です。"
+        image="/stock/plumbing.webp"
         breadcrumbs={[{ label: "サイトマップ" }]}
       />
 

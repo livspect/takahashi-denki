@@ -69,6 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
         <PageHeader
           en="BLOG"
           jp="記事を準備中です"
+          image="/stock/hands.webp"
           breadcrumbs={[{ label: "ブログ", href: "/blog" }, { label: "記事準備中" }]}
         />
         <section className="py-16 lg:py-24 bg-white">
@@ -105,6 +106,7 @@ export default async function BlogPostPage({ params }: Props) {
       <PageHeader
         en="BLOG"
         jp={post.title}
+        image={post.eyecatch?.url ?? "/stock/hands.webp"}
         breadcrumbs={[
           { label: "ブログ", href: "/blog" },
           { label: post.title },

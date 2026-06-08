@@ -18,6 +18,7 @@ export default function ContactPage() {
         en="CONTACT"
         jp="お問い合わせ"
         description="施工のご依頼・お見積り、採用に関するご質問、協力会社のご相談など、お気軽にどうぞ。"
+        image="/stock/hands.webp"
         breadcrumbs={[{ label: "お問い合わせ" }]}
       />
 

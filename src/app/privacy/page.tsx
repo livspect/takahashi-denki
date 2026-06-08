@@ -93,6 +93,7 @@ export default function PrivacyPage() {
         en="PRIVACY POLICY"
         jp="プライバシーポリシー"
         description="個人情報の取り扱いに関する当社の方針です。"
+        image="/stock/ac.webp"
         breadcrumbs={[{ label: "プライバシーポリシー" }]}
       />
 

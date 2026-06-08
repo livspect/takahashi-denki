@@ -106,6 +106,7 @@ export default async function WorksPage() {
         en="WORKS"
         jp="施工事例"
         description="住宅・店舗・施設まで、電気・空調・給排水の各分野で手がけた代表的な施工事例をご紹介します。"
+        image="/stock/lighting.webp"
         breadcrumbs={[{ label: "施工事例" }]}
       />
 

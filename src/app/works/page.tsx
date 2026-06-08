@@ -1,6 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { WorksFilter } from "@/components/WorksFilter";
-import { getWorks } from "@/lib/microcms";
+import { getWorks, workCategory } from "@/lib/microcms";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -91,7 +91,7 @@ export default async function WorksPage() {
   const works = cms.length
     ? cms.map((w) => ({
         title: w.title,
-        cat: w.category ?? "その他",
+        cat: workCategory(w.category),
         area: w.area ?? "",
         year: w.year ?? "",
         scale: w.scale ?? "",

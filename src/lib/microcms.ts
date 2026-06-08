@@ -69,7 +69,8 @@ export async function getBlogPost(id: string): Promise<BlogPost | null> {
 export type WorkItem = {
   id: string;
   title: string;
-  category?: string; // 電気 / 空調 / 給排水 など
+  // セレクトフィールドは配列で返る（例 ["電気"]）。テキストにした場合は文字列。
+  category?: string | string[];
   area?: string;
   year?: string;
   scale?: string;
@@ -79,6 +80,12 @@ export type WorkItem = {
   image?: string;
   publishedAt?: string;
 };
+
+/** category(セレクト=配列 / テキスト=文字列)を表示・絞り込み用の文字列に正規化する。 */
+export function workCategory(c: string | string[] | undefined): string {
+  if (Array.isArray(c)) return c[0] ?? "その他";
+  return c ?? "その他";
+}
 
 export async function getWorks(limit = 100): Promise<WorkItem[]> {
   if (!client) return [];

@@ -2,7 +2,58 @@ import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
 import { asset } from "@/lib/assets";
+import { getPositions } from "@/lib/microcms";
 import { pageMetadata } from "@/lib/seo";
+
+type Position = {
+  role: string;
+  type: string;
+  salary: string;
+  items: [string, string][];
+};
+
+// microCMS の positions が未投入/取得不可のときに表示するサンプル（デグレ防止）。
+const FALLBACK_POSITIONS: Position[] = [
+  {
+    role: "電気工事士（経験者）",
+    type: "正社員",
+    salary: "月給 28〜45万円",
+    items: [
+      ["雇用形態", "正社員（試用期間3ヶ月）"],
+      ["勤務地", "関東一円の各現場（直行直帰も可）"],
+      ["勤務時間", "8:00〜17:00（休憩1時間、現場により変動）"],
+      ["休日休暇", "週休2日制／年間休日120日／有給／夏季・冬季休暇"],
+      ["待遇", "各種保険完備／資格手当／退職金／交通費支給"],
+      ["応募資格", "第二種電気工事士以上、施工経験3年以上"],
+    ],
+  },
+  {
+    role: "電気工事士（未経験・新卒）",
+    type: "正社員",
+    salary: "月給 22〜26万円",
+    items: [
+      ["雇用形態", "正社員（試用期間3ヶ月）"],
+      ["勤務地", "関東一円の各現場"],
+      ["勤務時間", "8:00〜17:00（休憩1時間）"],
+      ["休日休暇", "週休2日制／年間休日120日／有給／夏季・冬季休暇"],
+      ["待遇", "各種保険完備／資格取得支援／退職金／交通費支給"],
+      ["応募資格", "学歴・経験不問。普通自動車免許（AT 限定可）"],
+    ],
+  },
+  {
+    role: "施工管理（現場監督）",
+    type: "正社員",
+    salary: "月給 32〜55万円",
+    items: [
+      ["雇用形態", "正社員（試用期間3ヶ月）"],
+      ["勤務地", "本社／関東一円の各現場"],
+      ["勤務時間", "8:00〜17:00（休憩1時間）"],
+      ["休日休暇", "週休2日制／年間休日120日／有給／夏季・冬季休暇"],
+      ["待遇", "各種保険完備／役職手当／資格手当／退職金"],
+      ["応募資格", "電気工事施工管理技士または同等の実務経験"],
+    ],
+  },
+];
 
 export const metadata = pageMetadata({
   title: "採用情報",
@@ -11,7 +62,25 @@ export const metadata = pageMetadata({
   path: "/recruit",
 });
 
-export default function RecruitPage() {
+export default async function RecruitPage() {
+  const cms = await getPositions();
+  const positions: Position[] = cms.length
+    ? cms.map((p) => ({
+        role: p.role,
+        type: p.type ?? "正社員",
+        salary: p.salary ?? "",
+        items: (
+          [
+            ["雇用形態", p.employmentType],
+            ["勤務地", p.location],
+            ["勤務時間", p.hours],
+            ["休日休暇", p.holidays],
+            ["待遇", p.benefits],
+            ["応募資格", p.qualifications],
+          ] as [string, string | undefined][]
+        ).filter((r): r is [string, string] => Boolean(r[1])),
+      }))
+    : FALLBACK_POSITIONS;
   return (
     <>
       <PageHeader
@@ -118,47 +187,7 @@ export default function RecruitPage() {
             <SectionLabel en="POSITIONS" jp="募集要項" />
           </div>
           <div className="space-y-6">
-            {[
-              {
-                role: "電気工事士（経験者）",
-                type: "正社員",
-                salary: "月給 28〜45万円",
-                items: [
-                  ["雇用形態", "正社員（試用期間3ヶ月）"],
-                  ["勤務地", "関東一円の各現場（直行直帰も可）"],
-                  ["勤務時間", "8:00〜17:00（休憩1時間、現場により変動）"],
-                  ["休日休暇", "週休2日制／年間休日120日／有給／夏季・冬季休暇"],
-                  ["待遇", "各種保険完備／資格手当／退職金／交通費支給"],
-                  ["応募資格", "第二種電気工事士以上、施工経験3年以上"],
-                ],
-              },
-              {
-                role: "電気工事士（未経験・新卒）",
-                type: "正社員",
-                salary: "月給 22〜26万円",
-                items: [
-                  ["雇用形態", "正社員（試用期間3ヶ月）"],
-                  ["勤務地", "関東一円の各現場"],
-                  ["勤務時間", "8:00〜17:00（休憩1時間）"],
-                  ["休日休暇", "週休2日制／年間休日120日／有給／夏季・冬季休暇"],
-                  ["待遇", "各種保険完備／資格取得支援／退職金／交通費支給"],
-                  ["応募資格", "学歴・経験不問。普通自動車免許（AT 限定可）"],
-                ],
-              },
-              {
-                role: "施工管理（現場監督）",
-                type: "正社員",
-                salary: "月給 32〜55万円",
-                items: [
-                  ["雇用形態", "正社員（試用期間3ヶ月）"],
-                  ["勤務地", "本社／関東一円の各現場"],
-                  ["勤務時間", "8:00〜17:00（休憩1時間）"],
-                  ["休日休暇", "週休2日制／年間休日120日／有給／夏季・冬季休暇"],
-                  ["待遇", "各種保険完備／役職手当／資格手当／退職金"],
-                  ["応募資格", "電気工事施工管理技士または同等の実務経験"],
-                ],
-              },
-            ].map((p) => (
+            {positions.map((p) => (
               <article key={p.role} className="border border-[color:var(--border)]">
                 <header className="bg-brand-700 text-white p-6 lg:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <div>

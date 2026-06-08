@@ -15,8 +15,8 @@ export default function HomePage() {
       <link
         rel="preload"
         as="image"
-        href={asset("/stock/hands.webp")}
-        imageSrcSet={`${asset("/stock/hands-768.webp")} 768w, ${asset("/stock/hands-1024.webp")} 1024w, ${asset("/stock/hands.webp")} 1280w`}
+        href={asset("/photos/storefront.webp")}
+        imageSrcSet={`${asset("/photos/storefront-768.webp")} 768w, ${asset("/photos/storefront-1024.webp")} 1024w, ${asset("/photos/storefront.webp")} 1280w`}
         imageSizes="100vw"
         fetchPriority="high"
       />
@@ -39,8 +39,8 @@ function Hero() {
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pb-20 sm:pb-0">
       <div className="absolute inset-0">
         <img
-          src={asset("/stock/hands.webp")}
-          srcSet={`${asset("/stock/hands-768.webp")} 768w, ${asset("/stock/hands-1024.webp")} 1024w, ${asset("/stock/hands.webp")} 1280w`}
+          src={asset("/photos/storefront.webp")}
+          srcSet={`${asset("/photos/storefront-768.webp")} 768w, ${asset("/photos/storefront-1024.webp")} 1024w, ${asset("/photos/storefront.webp")} 1280w`}
           sizes="100vw"
           alt=""
           aria-hidden

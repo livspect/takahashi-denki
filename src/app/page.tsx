@@ -360,7 +360,7 @@ function WorkplaceSection() {
                 <>
                   働きやすさは
                   <br className="sm:hidden" />
-                  <span className="inline-block bg-white text-brand-600 px-3 py-1 mx-1 leading-none align-middle relative -top-[0.18em] shadow-[0_8px_24px_rgba(0,0,0,0.18)]">仕組み</span>
+                  <span className="inline-block bg-white text-brand-600 px-3 pt-1 pb-1.5 mx-1 leading-none align-middle relative -top-[0.18em] shadow-[0_8px_24px_rgba(0,0,0,0.18)]">仕組み</span>
                   でつくる
                 </>
               }

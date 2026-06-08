@@ -17,7 +17,7 @@ export default function AboutPage() {
       <PageHeader
         en="ABOUT US"
         jp="会社概要"
-        description="有限会社たかはし電器のビジョン・社風・社会貢献活動についてご紹介します。"
+        description="東京都大田区を拠点に地域とともに歩む有限会社たかはし電器の、ビジョン・社風・社会貢献活動についてご紹介します。"
         breadcrumbs={[{ label: "会社概要" }]}
       />
 

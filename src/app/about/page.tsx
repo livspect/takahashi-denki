@@ -121,7 +121,7 @@ export default function AboutPage() {
               ],
               [
                 "指定給水装置工事事業者",
-                "第8578号",
+                "東京都知事登録 第8578号",
               ],
             ].map(([label, value]) => (
               <div

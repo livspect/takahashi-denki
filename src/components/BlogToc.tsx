@@ -51,16 +51,16 @@ export function BlogToc({ items, variant = "desktop" }: Props) {
   }
 
   const list = (
-    <ul className="space-y-1">
+    <ul className="space-y-1.5 border-l border-[color:var(--border)]">
       {items.map((t) => (
-        <li key={t.id} className={t.level === 3 ? "ml-3" : ""}>
+        <li key={t.id} className={t.level === 3 ? "pl-3" : ""}>
           <a
             href={`#${t.id}`}
             onClick={(e) => handleClick(e, t.id)}
-            className={`block border-l-2 pl-3 py-1 text-sm leading-snug transition-colors ${
+            className={`block -ml-px border-l-2 pl-4 py-0.5 text-sm leading-snug transition-colors ${
               active === t.id
                 ? "border-brand-600 text-brand-700 font-bold"
-                : "border-[color:var(--border)] text-foreground/60 hover:text-foreground hover:border-brand-300"
+                : "border-transparent text-foreground/55 hover:text-foreground"
             }`}
           >
             {t.text}
@@ -83,8 +83,9 @@ export function BlogToc({ items, variant = "desktop" }: Props) {
 
   return (
     <nav aria-label="目次" className="sticky top-28">
-      <p className="section-label-en text-xs text-brand-600 mb-4 tracking-[0.2em]">
-        INDEX
+      <p className="text-sm font-black text-foreground mb-4 flex items-center gap-2">
+        <span className="w-5 h-px bg-brand-600" />
+        目次
       </p>
       {list}
     </nav>

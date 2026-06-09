@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: Props) {
       />
 
       <article className="py-16 lg:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={
               hasToc
@@ -182,7 +182,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {related.length > 0 && (
         <section className="py-16 lg:py-24 bg-muted">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="section-label-en text-xs text-brand-600 mb-8 tracking-[0.2em]">
               RELATED POSTS
             </p>

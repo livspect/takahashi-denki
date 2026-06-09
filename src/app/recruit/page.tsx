@@ -239,7 +239,16 @@ export default async function RecruitPage() {
       <section className="py-16 sm:py-24 lg:py-32 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
-            <SectionLabel en="PARTNER" jp={"協力会社の\n皆様へ"} />
+            <SectionLabel
+              en="PARTNER"
+              jp={
+                <>
+                  協力会社の
+                  <br />
+                  皆様へ
+                </>
+              }
+            />
             <p className="mt-8 text-base leading-loose text-foreground/85 mb-8">
               共に長期的に成長していけるパートナー企業を募集しています。継続的な案件供給と公正な単価設定で、安定した取引関係を築きます。
             </p>

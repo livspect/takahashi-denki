@@ -183,15 +183,21 @@ dd {
 .prose-blog h2 {
   font-size: 1.5rem;
   font-weight: 900;
-  margin-top: 2.5rem;
+  margin-top: 2.75rem;
   margin-bottom: 1rem;
   letter-spacing: 0.04em;
+  padding-left: 0.85rem;
+  border-left: 4px solid var(--brand-500);
+  scroll-margin-top: 6.5rem;
 }
 .prose-blog h3 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--brand-300);
+  scroll-margin-top: 6.5rem;
 }
 .prose-blog p {
   margin: 1.25rem 0;

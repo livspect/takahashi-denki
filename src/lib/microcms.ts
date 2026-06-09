@@ -44,7 +44,6 @@ export async function getPositions(limit = 100): Promise<PositionItem[]> {
     const res = await client.get<MicroCMSListResponse<PositionItem>>({
       endpoint: "positions",
       queries: { limit },
-      customRequestInit: { cache: "no-store" },
     });
     return res.contents;
   } catch {
@@ -89,7 +88,6 @@ export async function getBlogPosts(limit = 100): Promise<BlogPost[]> {
     const res = await client.get<MicroCMSListResponse<BlogPost>>({
       endpoint: "blogs",
       queries: { limit, orders: "-publishedAt" },
-      customRequestInit: { cache: "no-store" },
     });
     return res.contents;
   } catch {
@@ -103,7 +101,6 @@ export async function getBlogPost(id: string): Promise<BlogPost | null> {
     return await client.get<BlogPost>({
       endpoint: "blogs",
       contentId: id,
-      customRequestInit: { cache: "no-store" },
     });
   } catch {
     return null;
@@ -140,7 +137,6 @@ export async function getWorks(limit = 100): Promise<WorkItem[]> {
     const res = await client.get<MicroCMSListResponse<WorkItem>>({
       endpoint: "works",
       queries: { limit, orders: "-publishedAt" },
-      customRequestInit: { cache: "no-store" },
     });
     return res.contents;
   } catch {

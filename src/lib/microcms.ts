@@ -51,6 +51,29 @@ export async function getPositions(limit = 100): Promise<PositionItem[]> {
   }
 }
 
+// 実績数値バンド（microCMS の "stats" エンドポイント）。
+// 未作成・env無し・取得失敗時は [] を返し、呼び出し側で現行の値にフォールバックする。
+export type StatItem = {
+  id: string;
+  label: string; // 項目名（例: 創業からの歩み）
+  value: string; // 数値（例: 16, 480。文字列で "+" 等も許容）
+  unit?: string; // 単位（例: 年, 名, 件+, %）
+  order?: number; // 表示順（小さい順）
+};
+
+export async function getStats(limit = 20): Promise<StatItem[]> {
+  if (!client) return [];
+  try {
+    const res = await client.get<MicroCMSListResponse<StatItem>>({
+      endpoint: "stats",
+      queries: { limit },
+    });
+    return res.contents;
+  } catch {
+    return [];
+  }
+}
+
 /** リッチエディタ(HTML)本文からプレーンテキストの抜粋を生成する。 */
 export function blogExcerpt(html: string | undefined, max = 100): string {
   if (!html) return "";

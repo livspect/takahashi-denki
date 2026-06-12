@@ -1,0 +1,81 @@
+{
+  "apiFields": [
+    {
+      "idValue": "pos-role",
+      "fieldId": "role",
+      "name": "職種",
+      "kind": "text",
+      "description": "例: 電気工事士（経験者）",
+      "required": true,
+      "isUnique": false
+    },
+    {
+      "idValue": "pos-type",
+      "fieldId": "type",
+      "name": "雇用区分バッジ",
+      "kind": "text",
+      "description": "例: 正社員",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "pos-salary",
+      "fieldId": "salary",
+      "name": "給与",
+      "kind": "text",
+      "description": "例: 月給 28〜45万円",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "pos-employmentType",
+      "fieldId": "employmentType",
+      "name": "雇用形態",
+      "kind": "text",
+      "description": "例: 正社員（試用期間3ヶ月）",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "pos-location",
+      "fieldId": "location",
+      "name": "勤務地",
+      "kind": "text",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "pos-hours",
+      "fieldId": "hours",
+      "name": "勤務時間",
+      "kind": "text",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "pos-holidays",
+      "fieldId": "holidays",
+      "name": "休日休暇",
+      "kind": "textArea",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "pos-benefits",
+      "fieldId": "benefits",
+      "name": "待遇・福利厚生",
+      "kind": "textArea",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "pos-qualifications",
+      "fieldId": "qualifications",
+      "name": "応募資格",
+      "kind": "textArea",
+      "required": false,
+      "isUnique": false
+    }
+  ],
+  "customFields": []
+}

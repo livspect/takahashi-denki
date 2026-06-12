@@ -3,7 +3,7 @@ import { SectionLabel } from "@/components/SectionLabel";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { Reveal } from "@/components/Reveal";
 import { asset } from "@/lib/assets";
-import { blogExcerpt, formatBlogDate, getBlogPosts, getWorks } from "@/lib/microcms";
+import { blogExcerpt, formatBlogDate, getBlogPosts, getStats, getWorks } from "@/lib/microcms";
 import { businessPillars, serviceAreas, site } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { faqSchema } from "@/lib/schema";
@@ -114,24 +114,35 @@ function Hero() {
   );
 }
 
-function StatsBand() {
-  const stats = [
-    { num: "16", unit: "年", label: "創業からの歩み" },
-    { num: "32", unit: "名", label: "在籍スタッフ数" },
-    { num: "480", unit: "件+", label: "年間施工実績" },
-    { num: "98", unit: "%", label: "リピート受注率" },
-  ];
+// microCMS の stats が未投入/取得不可のときに表示する現行値（デグレ防止）。
+const FALLBACK_STATS = [
+  { label: "創業からの歩み", value: "16", unit: "年" },
+  { label: "在籍スタッフ数", value: "32", unit: "名" },
+  { label: "年間施工実績", value: "480", unit: "件+" },
+  { label: "リピート受注率", value: "98", unit: "%" },
+];
+
+async function StatsBand() {
+  const cms = await getStats();
+  const stats = cms.length
+    ? [...cms]
+        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+        .map((s) => ({ label: s.label, value: s.value, unit: s.unit ?? "" }))
+    : FALLBACK_STATS;
   return (
     <section className="bg-brand-700 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
-        {stats.map((m) => (
-          <div key={m.label} className="py-8 lg:py-10 px-4 lg:px-6 text-center">
+        {stats.map((m, i) => (
+          <div
+            key={`${m.label}-${i}`}
+            className="py-8 lg:py-10 px-4 lg:px-6 text-center"
+          >
             <p className="text-[11px] text-white tracking-[0.2em] mb-3">
               {m.label}
             </p>
             <p className="font-black">
-              <span className="text-4xl lg:text-5xl">{m.num}</span>
-              <span className="text-xl ml-1">{m.unit}</span>
+              <span className="text-4xl lg:text-5xl">{m.value}</span>
+              {m.unit && <span className="text-xl ml-1">{m.unit}</span>}
             </p>
           </div>
         ))}

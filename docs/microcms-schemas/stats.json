@@ -1,0 +1,41 @@
+{
+  "apiFields": [
+    {
+      "idValue": "stats-label",
+      "fieldId": "label",
+      "name": "項目名",
+      "kind": "text",
+      "description": "例: 創業からの歩み",
+      "required": true,
+      "isUnique": false
+    },
+    {
+      "idValue": "stats-value",
+      "fieldId": "value",
+      "name": "数値",
+      "kind": "text",
+      "description": "例: 16, 480。\"+\" 等も入れられるようテキスト",
+      "required": true,
+      "isUnique": false
+    },
+    {
+      "idValue": "stats-unit",
+      "fieldId": "unit",
+      "name": "単位",
+      "kind": "text",
+      "description": "例: 年, 名, 件+, %",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "stats-order",
+      "fieldId": "order",
+      "name": "表示順",
+      "kind": "number",
+      "description": "小さい順に並びます（1,2,3…）",
+      "required": false,
+      "isUnique": false
+    }
+  ],
+  "customFields": []
+}

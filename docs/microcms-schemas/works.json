@@ -1,0 +1,74 @@
+{
+  "apiFields": [
+    {
+      "idValue": "works-title",
+      "fieldId": "title",
+      "name": "案件名",
+      "kind": "text",
+      "description": "例: 店舗 照明・配線設備工事",
+      "required": true,
+      "isUnique": false
+    },
+    {
+      "idValue": "works-category",
+      "fieldId": "category",
+      "name": "カテゴリ",
+      "kind": "select",
+      "description": "工事分野（1つ選択）",
+      "required": false,
+      "isUnique": false,
+      "multipleSelect": false,
+      "selectItems": [
+        { "id": "cat-elec", "value": "電気" },
+        { "id": "cat-air", "value": "空調" },
+        { "id": "cat-water", "value": "給排水" },
+        { "id": "cat-other", "value": "その他" }
+      ]
+    },
+    {
+      "idValue": "works-area",
+      "fieldId": "area",
+      "name": "エリア",
+      "kind": "text",
+      "description": "例: 東京都大田区",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "works-year",
+      "fieldId": "year",
+      "name": "施工年",
+      "kind": "text",
+      "description": "例: 2025",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "works-scale",
+      "fieldId": "scale",
+      "name": "規模",
+      "kind": "text",
+      "description": "例: 中規模 / 工期2週間 等",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "works-summary",
+      "fieldId": "summary",
+      "name": "概要",
+      "kind": "textArea",
+      "required": false,
+      "isUnique": false
+    },
+    {
+      "idValue": "works-thumbnail",
+      "fieldId": "thumbnail",
+      "name": "サムネイル画像",
+      "kind": "media",
+      "description": "施工写真",
+      "required": false,
+      "isUnique": false
+    }
+  ],
+  "customFields": []
+}

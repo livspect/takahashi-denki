@@ -24,7 +24,7 @@ export function organizationSchema(): Json {
     telephone: site.phone,
     image: url("/stock/hands.webp"),
     description: site.description,
-    foundingDate: "2008-04",
+    foundingDate: "1977-03",
     address: {
       "@type": "PostalAddress",
       postalCode: site.address.zip,

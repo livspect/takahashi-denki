@@ -21,10 +21,10 @@ if (!domain || !apiKey) {
 }
 
 const stats = [
-  { label: "創業からの歩み", value: "16", unit: "年", order: 1 },
-  { label: "在籍スタッフ数", value: "32", unit: "名", order: 2 },
-  { label: "年間施工実績", value: "480", unit: "件+", order: 3 },
-  { label: "リピート受注率", value: "98", unit: "%", order: 4 },
+  { label: "創業からの歩み", value: "49", unit: "年", order: 1 },
+  { label: "従業員数", value: "12", unit: "名", order: 2 },
+  { label: "事業分野", value: "4", unit: "分野", order: 3 },
+  { label: "地域密着", value: "大田区", unit: "", order: 4 },
 ];
 
 const endpoint = `https://${domain}.microcms.io/api/v1/stats`;

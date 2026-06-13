@@ -78,7 +78,7 @@ export const businessPillars = [
   {
     en: "HOME APPLIANCES",
     title: "家電販売・設置・修理",
-    image: "/photos/storefront.webp",
+    image: "/stock/appliances.webp",
     body: "パナソニックの地域店として、テレビ・洗濯機・冷蔵庫など家電の販売から設置・配線・修理まで一貫して対応します。",
     items: [
       "テレビ（壁掛け・配線・大型設置）",

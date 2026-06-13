@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "事業内容",
   description:
-    "電気工事・空調工事・給排水工事の3分野を軸に、住宅・店舗・施設の設備工事を一貫してお引き受けします。東京都・埼玉県・千葉県を中心に関東全域で対応。",
+    "電気・空調・給排水・ガスの設備工事から家電の販売・設置・修理まで、住宅・店舗・施設を一貫してお引き受け。東京都大田区を中心に関東一円で対応します。",
   path: "/business",
 });
 
@@ -18,7 +18,7 @@ export default function BusinessPage() {
       <PageHeader
         en="BUSINESS"
         jp="事業内容"
-        description="電気工事・空調工事・給排水工事の3分野を軸に、住宅・店舗・施設の設備工事を一貫してお引き受けします。"
+        description="電気・空調・給排水・ガスの設備工事から家電の販売・設置・修理まで、住宅・店舗・施設を一貫してお引き受けします。"
         image="/stock/electrical.webp"
         breadcrumbs={[{ label: "事業内容" }]}
       />
@@ -28,11 +28,11 @@ export default function BusinessPage() {
           <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 mb-16">
             <SectionLabel en="SCOPE" jp={"対応分野"} />
             <p className="text-base lg:text-lg leading-loose text-foreground/80">
-              電気・空調・給排水の3分野をワンストップでお引き受け。
-              小規模な改修から新築まで、規模・用途を問わず対応します。
+              電気・空調・給排水・ガス、そして家電まで、まるごとワンストップでお引き受け。
+              小規模な修理から新築・リフォームまで、規模・用途を問わず対応します。
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
             {businessPillars.map((p, i) => (
               <article
                 key={p.title}

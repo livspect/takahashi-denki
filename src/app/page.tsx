@@ -116,10 +116,10 @@ function Hero() {
 
 // microCMS の stats が未投入/取得不可のときに表示する現行値（デグレ防止）。
 const FALLBACK_STATS = [
-  { label: "創業からの歩み", value: "16", unit: "年" },
-  { label: "在籍スタッフ数", value: "32", unit: "名" },
-  { label: "年間施工実績", value: "480", unit: "件+" },
-  { label: "リピート受注率", value: "98", unit: "%" },
+  { label: "創業からの歩み", value: "49", unit: "年" },
+  { label: "従業員数", value: "12", unit: "名" },
+  { label: "事業分野", value: "4", unit: "分野" },
+  { label: "地域密着", value: "大田区", unit: "" },
 ];
 
 async function StatsBand() {
@@ -160,11 +160,11 @@ function BusinessIntro() {
             <SectionLabel en="BUSINESS" jp={"事業内容"} align="center" />
           </div>
           <p className="mt-8 text-base leading-loose text-foreground/75">
-            有限会社たかはし電器は、東京都大田区を拠点に、電気工事・空調工事・給排水工事の3分野を手がける設備工事会社です。
+            有限会社たかはし電器は、東京都大田区を拠点に、電気・空調・給排水・ガスの設備工事から家電の販売・設置・修理まで手がける、パナソニックの地域店です。
             暮らしと現場の「困った」に、分野を横断してワンストップでお応えします。
           </p>
         </Reveal>
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid sm:grid-cols-2 gap-8 lg:gap-10">
           {businessPillars.map((p, i) => (
             <Reveal key={p.title} delay={i * 120}>
               <Link
